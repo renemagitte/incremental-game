@@ -37,7 +37,7 @@ html{
 
 .container{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     border: 1px solid red;
     background-color: aquamarine;
     display: flex;
@@ -46,9 +46,14 @@ html{
 }
 
 .containerHalf{
-    width: 40%;
+    width: 50%;
     height: 100%; 
     border: 1px solid purple;
     box-sizing: border-box;
     background-color: bisque;
+}
+
+.welcome{
+    width: 400px;
+    background-image: brown;
 }
