@@ -11,7 +11,7 @@ class App extends Component {
     
     state = {
         loggedIn: false,
-        username: 'tjaaa'
+        username: ''
     }
 
   handleUsername = (username) => {
@@ -21,7 +21,7 @@ class App extends Component {
   render() {
         let view = <Welcome handleUsername={this.handleUsername}/>;
         if(this.state.loggedIn){
-          view = <Main />;
+          view = <Main username={ this.state.username } />;
         }
          
     return (

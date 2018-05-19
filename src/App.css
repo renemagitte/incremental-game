@@ -57,3 +57,8 @@ html{
     width: 100%;
     background-color: white;
 }
+
+.nameField{
+    width: 200px;
+    background-color: aqua;
+}
