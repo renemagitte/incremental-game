@@ -15,9 +15,6 @@ class Welcome extends Component {
   }
 
   handleUsername = (event) => {
-    /**
-     * Always prevent the form from submitting, event is always present.
-     */
     event.preventDefault();
     if(this.state.username){
       /**
@@ -26,9 +23,7 @@ class Welcome extends Component {
        * inside of <App />
        */
       this.props.handleUsername(this.state.username);
-    } else {
-      this.setState({ error: "Wrong email or password!" });
-    }
+    } 
     
   }
 
@@ -37,7 +32,7 @@ class Welcome extends Component {
     return (
     <div className="welcome">heeej
       <form onSubmit={this.handleUsername}>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">What shall we call u?</label>
           <input 
                   type="username"
                   className="form-control"
@@ -45,7 +40,7 @@ class Welcome extends Component {
                   id="username"
                   aria-describedby="emailHelp"
                   placeholder="Enter username"
-                  onChange={this.handleUsername}
+                  onChange={this.handleChange}
                   value={this.state.username}
           />
         <button type="submit" className="btn btn-primary">Submit</button>

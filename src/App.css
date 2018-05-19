@@ -54,6 +54,6 @@ html{
 }
 
 .welcome{
-    width: 400px;
-    background-image: brown;
+    width: 100%;
+    background-color: white;
 }

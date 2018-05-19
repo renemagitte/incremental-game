@@ -14,6 +14,10 @@ class App extends Component {
         username: 'tjaaa'
     }
 
+  handleUsername = (username) => {
+    this.setState({ loggedIn: true, username: username });
+  }
+
   render() {
         let view = <Welcome handleUsername={this.handleUsername}/>;
         if(this.state.loggedIn){
