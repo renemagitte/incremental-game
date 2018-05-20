@@ -20,6 +20,15 @@ class Vole extends Component {
     )
   }
  
+ 
+ shakeVole = (event) => {
+     let shakyVole = document.getElementById('vole');
+     shakyVole.classList.add('voleImgShake');
+     setTimeout(function(){ 
+         shakyVole.classList.remove('voleImgShake');
+     }, 400);
+  }
+ 
    onClick = (event) => {
     event.preventDefault();
       /**
@@ -38,7 +47,7 @@ class Vole extends Component {
     return (
         
         <Container>
-            <div className="voleImg" onClick={this.incrementCounter}><img src={require('./../img/vole.jpg')} /></div>
+            <div className="voleImg" id="vole" onClick={this.incrementCounter, this.shakeVole}><img src={require('./../img/vole.jpg')} /></div>
         </Container>
 
         
