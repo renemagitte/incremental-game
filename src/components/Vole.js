@@ -12,12 +12,21 @@ class Vole extends Component {
         counter: 0
     }
 
+/* This function increments the counter AND adds css shake class to vole */
  incrementCounter = () => {
     this.setState(
       {
         counter: this.state.counter + 1
       }
     )
+    
+/*
+    let shakyVole = document.getElementById('vole');
+     shakyVole.classList.add('voleImgShake');
+     setTimeout(function(){ 
+         shakyVole.classList.remove('voleImgShake');
+     }, 400);
+*/
   }
  
  
@@ -37,8 +46,12 @@ class Vole extends Component {
        * inside of <App />
        */
       this.props.onClick(this.state.counter);
+       
+       
+
     
   }
+
  
 
 
@@ -47,7 +60,7 @@ class Vole extends Component {
     return (
         
         <Container>
-            <div className="voleImg" id="vole" onClick={this.incrementCounter, this.shakeVole}><img src={require('./../img/vole.jpg')} /></div>
+            <div className="voleImg" id="vole" onClick={(event) => {  this.incrementCounter(); this.shakeVole();}}><img src={require('./../img/vole.jpg')} /></div>
         </Container>
 
         
