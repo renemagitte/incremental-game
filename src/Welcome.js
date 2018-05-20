@@ -30,7 +30,7 @@ class Welcome extends Component {
   render() {
 
     return (
-    <div className="welcome">heeej
+    <div className="welcome">
       <form onSubmit={this.handleUsername}>
           <label htmlFor="username">What shall we call u?</label>
           <input 

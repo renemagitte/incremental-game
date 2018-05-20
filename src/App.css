@@ -1,7 +1,5 @@
 html{
-/*    cursor: url('hammerrr.jpg'), 2 2, grab;*/
-/*    cursor: wait;*/
-    cursor: url(smiley.png) 2 2, pointer;
+/*    cursor: url(smiley.png) 2 2, pointer;*/
 }
 
 .App {
@@ -58,7 +56,52 @@ html{
     background-color: white;
 }
 
+.nameFieldWrapper{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .nameField{
-    width: 200px;
-    background-color: aqua;
+    width: 40%;
+    text-align: right;
+    padding: 20px;
+}
+
+
+.voleImg{
+    width: 500px;
+    border: 1px solid green;
+}
+
+.voleImg img{
+    width: 400px;
+}
+
+.weaponListWrapper{
+    width: 100%;
+    height: 400px;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
+}
+
+.weaponItem{
+    width: 160px;
+    height: 160px;
+    border: 2px solid gray;
+    box-sizing: border-box;
+}
+
+.axeCursor{
+    cursor: url(img/axeCursor.png) 2 2, pointer !important;
+}
+
+.bowCursor{
+    cursor: url(img/bowCursor.png) 2 2, pointer !important;
 }

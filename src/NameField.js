@@ -4,9 +4,10 @@ import App from './App.js';
 
 function NameField(props) {
     return (
-      <div className="nameField">
-        Heeej
-        { props.username }
+      <div className="nameFieldWrapper">
+        <div className="nameField">
+            Aye, { props.username } voleslayer!
+        </div>
       </div>
     );
 }

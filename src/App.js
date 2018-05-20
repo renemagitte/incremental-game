@@ -6,22 +6,50 @@ import Welcome from './Welcome.js';
 import Main from './Main.js';
 import Container from './components/layout/Container';
 import ContainerHalf from './components/layout/ContainerHalf';
+import NameField from'./NameField';
+import VoleFunction from'./components/VoleFunction';
+import Vole from'./components/Vole';
+import WeaponItem from'./components/weapons/WeaponItem';
+import WeaponList from'./components/weapons/WeaponList';
 
 class App extends Component {
     
     state = {
         loggedIn: false,
-        username: ''
+        username: '',
+        clicks: 0
     }
 
   handleUsername = (username) => {
     this.setState({ loggedIn: true, username: username });
   }
+  
+handleClick = (clicks) => {
+    this.setState({ clicks: this.state.clicks + 1 });
+  }
 
+
+ 
   render() {
         let view = <Welcome handleUsername={this.handleUsername}/>;
         if(this.state.loggedIn){
-          view = <Main username={ this.state.username } />;
+          view = <Container style="container">
+                    <ContainerHalf style="containerHalf">
+          
+                        <Vole onClick={ this.handleClick }/>
+                    </ContainerHalf>        
+                    <ContainerHalf style="containerHalf">
+                { /* props.username */ }
+            { /* <div> <NameField username={props.username} /></div> */ }
+                        <NameField username={ this.state.username } />
+                        <WeaponList />
+
+
+                </ContainerHalf>
+
+                    </Container>;
+              
+              /* <Main username={ this.state.username } />; */
         }
          
     return (
