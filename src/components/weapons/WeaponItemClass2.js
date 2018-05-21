@@ -8,8 +8,7 @@ class WeaponItem extends Component {
     
     state = {
         item: '',
-        price: 0,
-        toggle: true
+        price: 0
     }
 
 handleCursor = (event) => {
@@ -17,11 +16,14 @@ handleCursor = (event) => {
     let cursor = this.props.cursor;
 //    cursorArea.classList.add('axeCursor');
     cursorArea.classList.add(cursor);
+    
+//    if(this.state.clicks < 20){
+//          let axe = document.getElementById('axe');
+//          axe.classList.remove('weaponItemInactive');
+//      }
+    
+    
 }
-
-toggleClass = () => {
-    this.setState({ toggle: !this.state.toggle });
-  };
 
 componentDidMount(){
 
@@ -30,24 +32,17 @@ componentDidMount(){
 }
 
  render(){ 
-     let weaponItemClass = "weaponItem";
-     let hej = "yes";
-     if(hej == "yes"){
-         weaponItemClass += " weaponInactive";
-     }
+     
+     let imgUrl = this.props.imgUrl;
     
     return (
         
         
-        <div className={weaponItemClass} onClick={(event) => {  this.handleCursor(); this.toggleClass();}} id={ this.props.item }>
-        
-{ /* onClick={this.handleCursor} */ }
-
-
-            <img src={require('./../../img/axeCursor.png')}/> 
-           { /* <img src={ this.props.imgUrl } /> */ }
-            Item: { this.props.item }
-            Price: { this.props.price }
+        <div className="weaponItem weaponItemInactive" onClick={this.handleCursor} id={ this.props.itemInfo.item }>
+        { /* <img src={require('./../../img/axeCursor.png')}/> */ }
+        <img src={ this.props.itemInfo.imgUrl } />
+            Item: { this.props.itemInfo.item }
+            Price: { this.props.itemInfo.price }
         </div>
 
     );

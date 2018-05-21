@@ -97,6 +97,12 @@ html{
     height: 160px;
     border: 2px solid gray;
     box-sizing: border-box;
+/*    filter: blur(4px);*/
+
+}
+
+.weaponItemInactive{
+    filter: blur(4px);
 }
 
 .axeCursor{

@@ -8,7 +8,7 @@ function WeaponItem(props) {
     
     return (
         
-        <div class="weaponItem">
+        <div class="weaponItem weaponItemInactive">
             { props.children }
         </div>
 

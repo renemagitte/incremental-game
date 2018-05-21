@@ -8,7 +8,7 @@ import Container from './components/layout/Container';
 import ContainerHalf from './components/layout/ContainerHalf';
 import NameField from'./NameField';
 import VoleFunction from'./components/VoleFunction';
-import Vole from'./components/Vole';
+import Vole from './components/Vole';
 import WeaponItem from'./components/weapons/WeaponItem';
 import WeaponList from'./components/weapons/WeaponList';
 
@@ -28,9 +28,23 @@ handleClick = (clicks) => {
     this.setState({ clicks: this.state.clicks + 1 });
   }
 
+checkLevel = () => {
+    if(this.state.clicks < 20){
+        console.log("Level 1");
+        let axe = document.getElementById('Axe');
+//        axe.classList.remove('weaponItemInactive');
+    }else if(this.state.clicks > 20){
+        console.log("Level 2");
+    }else if(this.state.clicks > 30){
+        console.log("Level 3");
+    }
+}
 
  
   render() {
+      
+      this.checkLevel();
+      
         let view = <Welcome handleUsername={this.handleUsername}/>;
         if(this.state.loggedIn){
           view = <Container style="container">
@@ -51,6 +65,9 @@ handleClick = (clicks) => {
               
               /* <Main username={ this.state.username } />; */
         }
+      
+      
+      
          
     return (
         

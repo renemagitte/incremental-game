@@ -12,32 +12,24 @@ class Vole extends Component {
         counter: 0
     }
 
-/* This function increments the counter AND adds css shake class to vole */
- incrementCounter = () => {
-    this.setState(
-      {
-        counter: this.state.counter + 1
-      }
-    )
+    incrementCounter = () => {
+        this.setState(
+          {
+            counter: this.state.counter + 1
+          }
+        )
+    }
+ 
+    shakeVole = (event) => {
+         let shakyVole = document.getElementById('vole');
+         shakyVole.classList.add('voleImgShake');
+         setTimeout(function(){ 
+             shakyVole.classList.remove('voleImgShake');
+         }, 400);
+    }
+ 
     
-/*
-    let shakyVole = document.getElementById('vole');
-     shakyVole.classList.add('voleImgShake');
-     setTimeout(function(){ 
-         shakyVole.classList.remove('voleImgShake');
-     }, 400);
-*/
-  }
- 
- 
- shakeVole = (event) => {
-     let shakyVole = document.getElementById('vole');
-     shakyVole.classList.add('voleImgShake');
-     setTimeout(function(){ 
-         shakyVole.classList.remove('voleImgShake');
-     }, 400);
-  }
- 
+/* Ta bort denna */
    onClick = (event) => {
     event.preventDefault();
       /**
@@ -45,11 +37,7 @@ class Vole extends Component {
        * this function will not be executed inside of LoginForm, it will be executed
        * inside of <App />
        */
-      this.props.onClick(this.state.counter);
-       
-       
-
-    
+      this.props.onClick(this.state.counter); 
   }
 
  
@@ -60,7 +48,7 @@ class Vole extends Component {
     return (
         
         <Container>
-            <div className="voleImg" id="vole" onClick={(event) => {  this.incrementCounter(); this.shakeVole();}}><img src={require('./../img/vole.jpg')} /></div>
+            <div className="voleImg" id="vole" onClick={(event) => {  this.incrementCounter(); this.shakeVole(); this.props.onClick();}}><img src={require('./../img/vole.jpg')} /></div>
         </Container>
 
         
