@@ -34,6 +34,10 @@ class WeaponItem extends Component {
 //        }
       };
 
+    increasePrice = () => {
+        this.setState({ price: this.state.price + 2 }); // detta värde ska vara props, ej hårdkodat
+    }
+
     withdrawClicks = () => {
       this.props.withdrawClicks(this.state.price); 
     }
@@ -66,9 +70,9 @@ class WeaponItem extends Component {
             <img src={require('./../../img/axeCursor.png')}/> 
            { /* <img src={ this.props.imgUrl } /> */ }
             Item: { this.props.item }
-            Price: { this.props.price }
+            Price: { this.state.price }
 
-            {!this.state.purchased && <button onClick={(event) => {  this.handleCursor(); this.withdrawClicks();}}>Buy</button>}
+            {!this.state.purchased && <button onClick={(event) => {  this.handleCursor(); this.withdrawClicks(); this.increasePrice();}}>Buy</button>}
 
         </div>
 
