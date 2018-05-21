@@ -11,14 +11,41 @@ class WeaponItem extends Component {
         price: 0,
         purchased: false,
         toggle: false,
-        clicks: 0,
+        clicks: this.props.clicks,
         toggleStartAt: 0
+    }
+
+    handlePurchase = (event) => {
+        
+
+        if(this.props.clicks >= this.state.price){
+
+            this.withdrawClicks();     
+            this.increasePrice();
+//            this.toggleBuyButton();
+            this.handleCursor();
+            
+                    if(this.state.item == 'Axe Deodorant'){
+                        alert("Better than pepperspray? Let's try!")
+                        this.props.axeDeoSpecial();
+                    }
+                        
+        }else{
+            alert("Whahaha get some more points first will you!")
+        }
+    }
+    
+    withdrawClicks = () => {
+      this.props.withdrawClicks(this.state.price); 
+    }
+    
+    increasePrice = () => {
+        this.setState({ price: this.state.price + 2 }); // detta värde ska vara props, ej hårdkodat
     }
 
     handleCursor = (event) => {
         let cursorArea = document.getElementById('root');
         let cursor = this.props.cursor;
-    //    cursorArea.classList.add('axeCursor');
         cursorArea.classList.add(cursor);
     }
 
@@ -34,13 +61,8 @@ class WeaponItem extends Component {
 //        }
       };
 
-    increasePrice = () => {
-        this.setState({ price: this.state.price + 2 }); // detta värde ska vara props, ej hårdkodat
-    }
 
-    withdrawClicks = () => {
-      this.props.withdrawClicks(this.state.price); 
-    }
+
 
     componentDidMount(){
 
@@ -67,12 +89,12 @@ class WeaponItem extends Component {
 
         <div className={weaponItemClass} id={ this.state.item }>
 
-            <img src={require('./../../img/axeCursor.png')}/> 
-           { /* <img src={ this.props.imgUrl } /> */ }
+           { /* <img src={require('./../../img/axeCursor.png')}/> */ }
+           <img src={ this.props.imgUrl } />
             Item: { this.props.item }
             Price: { this.state.price }
 
-            {!this.state.purchased && <button onClick={(event) => {  this.handleCursor(); this.withdrawClicks(); this.increasePrice();}}>Buy</button>}
+            {!this.state.purchased && <button onClick={this.handlePurchase} >Buy</button>}
 
         </div>
 

@@ -8,6 +8,9 @@ function NameField(props) {
         <div className="nameField">
             Aye, { props.username } voleslayer!
         </div>
+        <div className="nameField">
+            { props.clicks } so far.
+        </div>
       </div>
     );
 }

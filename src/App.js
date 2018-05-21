@@ -29,8 +29,14 @@ class App extends Component {
       }
     
     withdrawClicks = (clicks) => {
-        this.setState({ clicks: this.state.clicks - clicks });
-        
+        this.setState({ clicks: this.state.clicks - clicks });  
+    }
+    
+    axeDeoSpecial = () => {
+            alert("Get free click every 5th second"); 
+        setInterval(() => { 
+            this.setState({ clicks: this.state.clicks + 1 });
+        }, 5000); 
     }
 
 
@@ -62,8 +68,8 @@ checkLevel = () => {
                     <ContainerHalf style="containerHalf">
                 { /* props.username */ }
             { /* <div> <NameField username={props.username} /></div> */ }
-                        <NameField username={ this.state.username } />
-                        <WeaponList clicks={ this.state.clicks } withdrawClicks={ this.withdrawClicks } />
+                        <NameField username={ this.state.username } clicks={ this.state.clicks } />
+                        <WeaponList clicks={ this.state.clicks } withdrawClicks={ this.withdrawClicks } axeDeoSpecial={ this.axeDeoSpecial } />
 
 
                 </ContainerHalf>
