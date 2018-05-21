@@ -9,6 +9,7 @@ class WeaponItem extends Component {
     state = {
         item: '',
         price: 0,
+        purchased: false,
         toggle: false,
         clicks: 0,
         toggleStartAt: 0
@@ -27,6 +28,16 @@ class WeaponItem extends Component {
 //        }
       };
 
+    toggleBuyButton = () => {
+//        if(this.state.toggle){
+            this.setState({ purchased: !this.state.purchased });
+//        }
+      };
+
+    withdrawClicks = () => {
+      this.props.withdrawClicks(this.state.price); 
+    }
+
     componentDidMount(){
 
             this.setState({ item: this.props.item, price: this.props.price, toggleStartAt: this.props.toggleStartAt, clicks: this.props.clicks  });
@@ -40,20 +51,25 @@ class WeaponItem extends Component {
              weaponItemClass = "weaponItem";
          }
 
-         console.log(this.props.clicks);
-     
+//         console.log(this.props.clicks);
+//        
+//        let purchaseButton = <button onClick={this.toggleClass}>Buy</button>
+//        if(!this.stated.purchase)
+//     
     return (
         
         
-        <div className={weaponItemClass} onClick={(event) => {  this.handleCursor(); this.toggleClass();}} id={ this.state.item }>
-        
-{ /* onClick={this.handleCursor} */ }
 
+
+        <div className={weaponItemClass} id={ this.state.item }>
 
             <img src={require('./../../img/axeCursor.png')}/> 
            { /* <img src={ this.props.imgUrl } /> */ }
             Item: { this.props.item }
             Price: { this.props.price }
+
+            {!this.state.purchased && <button onClick={(event) => {  this.handleCursor(); this.withdrawClicks();}}>Buy</button>}
+
         </div>
 
     );

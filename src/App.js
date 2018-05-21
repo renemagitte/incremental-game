@@ -24,9 +24,16 @@ class App extends Component {
     this.setState({ loggedIn: true, username: username });
   }
   
-handleClick = (clicks) => {
-    this.setState({ clicks: this.state.clicks + 1 });
-  }
+    handleClick = (clicks) => {
+        this.setState({ clicks: this.state.clicks + 1 });
+      }
+    
+    withdrawClicks = (clicks) => {
+        this.setState({ clicks: this.state.clicks - clicks });
+        
+    }
+
+
 
 checkLevel = () => {
     if(this.state.clicks < 20){
@@ -56,7 +63,7 @@ checkLevel = () => {
                 { /* props.username */ }
             { /* <div> <NameField username={props.username} /></div> */ }
                         <NameField username={ this.state.username } />
-                        <WeaponList clicks={ this.state.clicks }/>
+                        <WeaponList clicks={ this.state.clicks } withdrawClicks={ this.withdrawClicks } />
 
 
                 </ContainerHalf>
