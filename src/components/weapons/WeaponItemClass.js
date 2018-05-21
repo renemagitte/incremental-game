@@ -10,36 +10,42 @@ class WeaponItem extends Component {
         item: '',
         price: 0,
         toggle: false,
-        clicks: 0
+        clicks: 0,
+        toggleStartAt: 0
     }
 
-handleCursor = (event) => {
-    let cursorArea = document.getElementById('root');
-    let cursor = this.props.cursor;
-//    cursorArea.classList.add('axeCursor');
-    cursorArea.classList.add(cursor);
-}
+    handleCursor = (event) => {
+        let cursorArea = document.getElementById('root');
+        let cursor = this.props.cursor;
+    //    cursorArea.classList.add('axeCursor');
+        cursorArea.classList.add(cursor);
+    }
 
-toggleClass = () => {
-    this.setState({ toggle: !this.state.toggle });
-  };
+    toggleClass = () => {
+//        if(this.state.toggle){
+            this.setState({ toggle: !this.state.toggle });
+//        }
+      };
 
-componentDidMount(){
+    componentDidMount(){
 
-        this.setState({ item: this.props.item, price: this.props.price, clicks: this.props.clicks  });
+            this.setState({ item: this.props.item, price: this.props.price, toggleStartAt: this.props.toggleStartAt, clicks: this.props.clicks  });
 
-}
+    }
 
- render(){ 
-     let weaponItemClass = "weaponItem weaponItemInactive";
-     if(this.state.toggle){
-         weaponItemClass = "weaponItem";
-     }
-    
+    render(){ 
+         let weaponItemClass = "weaponItem weaponItemInactive";
+//         if(this.props.clicks > 0){
+         if(this.props.clicks >= this.state.toggleStartAt){
+             weaponItemClass = "weaponItem";
+         }
+
+         console.log(this.props.clicks);
+     
     return (
         
         
-        <div className={weaponItemClass} onClick={(event) => {  this.handleCursor(); this.toggleClass();}} id={ this.props.item }>
+        <div className={weaponItemClass} onClick={(event) => {  this.handleCursor(); this.toggleClass();}} id={ this.state.item }>
         
 { /* onClick={this.handleCursor} */ }
 
