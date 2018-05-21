@@ -9,7 +9,8 @@ class WeaponItem extends Component {
     state = {
         item: '',
         price: 0,
-        toggle: true
+        toggle: false,
+        clicks: 0
     }
 
 handleCursor = (event) => {
@@ -25,15 +26,14 @@ toggleClass = () => {
 
 componentDidMount(){
 
-        this.setState({ item: this.props.item, price: this.props.price  });
+        this.setState({ item: this.props.item, price: this.props.price, clicks: this.props.clicks  });
 
 }
 
  render(){ 
-     let weaponItemClass = "weaponItem";
-     let hej = "yes";
-     if(hej == "yes"){
-         weaponItemClass += " weaponInactive";
+     let weaponItemClass = "weaponItem weaponItemInactive";
+     if(this.state.toggle){
+         weaponItemClass = "weaponItem";
      }
     
     return (

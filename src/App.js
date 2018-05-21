@@ -56,7 +56,7 @@ checkLevel = () => {
                 { /* props.username */ }
             { /* <div> <NameField username={props.username} /></div> */ }
                         <NameField username={ this.state.username } />
-                        <WeaponList />
+                        <WeaponList clicks={ this.state.clicks }/>
 
 
                 </ContainerHalf>

@@ -95,7 +95,7 @@ html{
 .weaponItem{
     width: 160px;
     height: 160px;
-    border: 2px solid gray;
+/*    border: 2px solid gray;*/
     box-sizing: border-box;
 /*    filter: blur(4px);*/
 

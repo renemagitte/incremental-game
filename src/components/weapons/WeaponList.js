@@ -26,7 +26,7 @@ function WeaponList(props) {
     return (
         
         <Container style="weaponListWrapper">
-            <WeaponItemClass price={10} item={'Axe'} cursor={'axeCursor'} imgUrl={'./../../img/axeCursor.png'} />
+            <WeaponItemClass price={10} item={'Axe'} cursor={'axeCursor'} imgUrl={'./../../img/axeCursor.png'} clicks={ props.clicks }/>
             <WeaponItemClass price={20} item={'Bow'} cursor={'bowCursor'} imgUrl={'./../../img/bowCursor.png'} />
             <WeaponItemClass price={30} item={'Sword'} cursor={'bowCursor'} imgUrl={'./../../img/bowCursor.png'} />
         
