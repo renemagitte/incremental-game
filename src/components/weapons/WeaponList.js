@@ -60,15 +60,6 @@ function WeaponList(props) {
         
         <Container style="weaponListWrapper">
         
-                { /*
-            <WeaponItemClass price={10} item={'Axe'} cursor={'axeCursor'} toggleStartAt={0} imgUrl={ axeCursor } clicks={ props.clicks } withdrawClicks={ props.withdrawClicks } />
-            <WeaponItemClass price={10} item={'Axe Deodorant'} cursor={'axeDeoCursor'} toggleStartAt={10} imgUrl={axeDeoCursor} clicks={ props.clicks } withdrawClicks={ props.withdrawClicks } axeDeoSpecial={ props.axeDeoSpecial }/>
-            <WeaponItemClass price={20} item={'Bow'} cursor={'bowCursor'} toggleStartAt={20} imgUrl={bowCursor} clicks={ props.clicks } withdrawClicks={ props.withdrawClicks } />
-            <WeaponItemClass price={30} item={'Sword'} cursor={'swordCursor'} toggleStartAt={30} imgUrl={swordCursor} clicks={ props.clicks } withdrawClicks={ props.withdrawClicks } />
-              */ }
- 
-        
-
             <WeaponItemClass weapon={axe} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } />
             <WeaponItemClass weapon={axeDeo} withdrawClicks={ props.withdrawClicks } axeDeoSpecial={ props.axeDeoSpecial } clicks={ props.clicks }/>
             <WeaponItemClass weapon={bow} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } />

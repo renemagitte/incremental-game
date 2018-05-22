@@ -10,6 +10,7 @@ import NameField from'./NameField';
 import CounterField from'./CounterField';
 import VoleFunction from'./components/VoleFunction';
 import Vole from './components/Vole';
+import VoleJS from './components/VoleJS';
 import WeaponItem from'./components/weapons/WeaponItem';
 import WeaponList from'./components/weapons/WeaponList';
 
@@ -60,11 +61,19 @@ checkLevel = () => {
       this.checkLevel();
       
         let view = <Welcome handleUsername={this.handleUsername}/>;
+      
+        let voleView = '';
+        if(this.state.clicks < 100){
+            voleView = <Vole onClick={ this.handleClick }/>;  
+        }else{
+            voleView = <VoleJS onClick={ this.handleClick }/>
+        }
+
         if(this.state.loggedIn){
           view = <Container style="container">
                     <ContainerHalf style="containerHalf">
           
-                        <Vole onClick={ this.handleClick }/>
+                        { voleView }
                     </ContainerHalf>        
                     <ContainerHalf style="containerHalf">
                 { /* props.username */ }

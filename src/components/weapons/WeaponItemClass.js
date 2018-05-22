@@ -25,7 +25,7 @@ class WeaponItem extends Component {
 //            this.toggleBuyButton();
             this.handleCursor();
             
-                    if(this.state.item == 'Axe Deodorant'){
+                    if(this.props.weapon.item == 'Axe Deodorant'){
                         alert("Better than pepperspray? Let's try!")
                         this.props.axeDeoSpecial();
                     }
@@ -66,7 +66,7 @@ class WeaponItem extends Component {
 
     componentDidMount(){
 
-            this.setState({ item: this.props.item, price: this.props.price, toggleStartAt: this.props.toggleStartAt, clicks: this.props.clicks  });
+            this.setState({ item: this.props.item, price: this.props.weapon.price, toggleStartAt: this.props.toggleStartAt, clicks: this.props.clicks  });
 
     }
 
@@ -86,9 +86,9 @@ class WeaponItem extends Component {
 
          
         <div className={weaponItemClass} id={ this.state.item }>
-            <img src={ this.props.weapon.imgUrl } />
-            Item: { this.props.weapon.item }
-            Price: { this.props.weapon.price }
+            <img src={ this.props.weapon.imgUrl } /> <br />
+            Item: { this.props.weapon.item } <br />
+            Price: { this.state.price } <br />
 
             {!this.state.purchased && <button onClick={this.handlePurchase} >Buy</button>}
 

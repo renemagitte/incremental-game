@@ -101,6 +101,7 @@ html{
     width: 40%;
     text-align: right;
     padding: 20px;
+    font-family: 'Yeon Sung', cursive;
 }
 
 .voleContainer{
@@ -109,6 +110,7 @@ html{
     display: flex;
     justify-content: space-around; 
 }
+
 
 .voleImg{
     width: auto;
@@ -172,4 +174,24 @@ html{
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.matrix{
+    background-color: black;
+    font-family: 'Yeon Sung', cursive;
+    font-size: 40px;
+    color: green;
+    text-shadow: 2px 2px 4px #000000;   
+}
+
+.matrixCode{
+    background-color: black;
+    font-size: 12px;
+    color: lightgreen; 
+    margin-left: 0px auto;
+}
+
+.matrixForm{
+    width: 200px;
+    height: 200px;
 }
