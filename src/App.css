@@ -65,6 +65,11 @@ html{
    align-self: center; 
 }
 
+.welcomeTitle{
+    font-family: 'Yeon Sung', cursive;
+    font-size: 60px;
+}
+
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
