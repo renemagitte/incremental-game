@@ -6,7 +6,7 @@ function NameField(props) {
     return (
       <div className="nameFieldWrapper">
         <div className="nameField">
-            Aye, { props.username } voleslayer!
+            { props.clicks } clicks so far.
         </div>
       </div>
     );

@@ -83,14 +83,9 @@ class WeaponItem extends Component {
 //        if(!this.stated.purchase)
 //     
     return (
-        
-        
-
 
         <div className={weaponItemClass} id={ this.state.item }>
-
-           { /* <img src={require('./../../img/axeCursor.png')}/> */ }
-           <img src={ this.props.imgUrl } />
+            <img src={ this.props.imgUrl } />
             Item: { this.props.item }
             Price: { this.state.price }
 

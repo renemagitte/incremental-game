@@ -39,6 +39,7 @@ class Vole extends Component {
        */
       this.props.onClick(this.state.counter); 
   }
+   
 
  
 
@@ -48,7 +49,10 @@ class Vole extends Component {
     return (
         
         <Container>
-            <div className="voleImg" id="vole" onClick={(event) => {  this.incrementCounter(); this.shakeVole(); this.props.onClick();}}><img src={require('./../img/vole.jpg')} /></div>
+            <div class="voleContainer">
+                <div className="voleImg" id="vole" onClick={(event) => {  this.incrementCounter(); this.shakeVole(); this.props.onClick();}}><img src={require('./../img/vole.jpg')} /></div>
+            </div>
+                                                                                                                                                   
         </Container>
 
         

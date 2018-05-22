@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import voleSilouette from './img/voleSilouette.jpg';
+
 class Welcome extends Component {
 
   state = {
@@ -31,20 +33,24 @@ class Welcome extends Component {
 
     return (
     <div className="welcome">
-      <form onSubmit={this.handleUsername}>
-          <label htmlFor="username">What shall we call u?</label>
-          <input 
-                  type="username"
-                  className="form-control"
-                  name="username"
-                  id="username"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter username"
-                  onChange={this.handleChange}
-                  value={this.state.username}
-          />
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
+        <div className="welcomeCentered">
+            <img src={ voleSilouette } />
+
+              <form onSubmit={this.handleUsername}>
+                  <p><label htmlFor="username">Även idioter har ett namn, vad är ditt???</label></p>
+                  <input 
+                          type="username"
+                          className="form-control"
+                          name="username"
+                          id="username"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter username"
+                          onChange={this.handleChange}
+                          value={this.state.username}
+                  />
+                <button type="submit" className="button">Submit</button>
+              </form>
+            </div>
         </div>
       );
     }

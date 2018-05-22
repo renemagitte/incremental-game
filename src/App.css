@@ -37,7 +37,6 @@ html{
     width: 100%;
     height: 100vh;
     border: 1px solid red;
-    background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -48,12 +47,41 @@ html{
     height: 100%; 
     border: 1px solid purple;
     box-sizing: border-box;
-    background-color: bisque;
 }
 
 .welcome{
     width: 100%;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcome img{
+    width: 300px;
+}
+
+.welcomeCentered{
+   align-self: center; 
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8px;
+    border-radius: 4px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
 }
 
 .nameFieldWrapper{
@@ -72,15 +100,21 @@ html{
     padding: 20px;
 }
 
+.voleContainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around; 
+}
 
 .voleImg{
-    width: 500px;
-    height: 600px;
-    border: 1px solid green;
+    width: auto;
+    height: auto;
+    align-self: center;
 }
 
 .voleImg img{
-    width: 300px;
+    width: 200px;
 }
 
 .weaponListWrapper{

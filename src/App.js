@@ -7,6 +7,7 @@ import Main from './Main.js';
 import Container from './components/layout/Container';
 import ContainerHalf from './components/layout/ContainerHalf';
 import NameField from'./NameField';
+import CounterField from'./CounterField';
 import VoleFunction from'./components/VoleFunction';
 import Vole from './components/Vole';
 import WeaponItem from'./components/weapons/WeaponItem';
@@ -68,7 +69,8 @@ checkLevel = () => {
                     <ContainerHalf style="containerHalf">
                 { /* props.username */ }
             { /* <div> <NameField username={props.username} /></div> */ }
-                        <NameField username={ this.state.username } clicks={ this.state.clicks } />
+                        <NameField username={ this.state.username } />
+                        <CounterField clicks={ this.state.clicks } />
                         <WeaponList clicks={ this.state.clicks } withdrawClicks={ this.withdrawClicks } axeDeoSpecial={ this.axeDeoSpecial } />
 
 

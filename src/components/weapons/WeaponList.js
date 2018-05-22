@@ -11,6 +11,7 @@ import img1 from './../../img/bowCursor.png';
 import axeCursor from './../../img/axeCursor.png';
 import axeDeoCursor from './../../img/axeDeoCursor.png';
 import bowCursor from './../../img/bowCursor.png';
+import swordCursor from './../../img/swordCursor.png';
 
 function WeaponList(props) {
     
@@ -34,7 +35,7 @@ function WeaponList(props) {
             <WeaponItemClass price={10} item={'Axe'} cursor={'axeCursor'} toggleStartAt={0} imgUrl={ axeCursor } clicks={ props.clicks } withdrawClicks={ props.withdrawClicks } />
             <WeaponItemClass price={10} item={'Axe Deodorant'} cursor={'axeDeoCursor'} toggleStartAt={10} imgUrl={axeDeoCursor} clicks={ props.clicks } withdrawClicks={ props.withdrawClicks } axeDeoSpecial={ props.axeDeoSpecial }/>
             <WeaponItemClass price={20} item={'Bow'} cursor={'bowCursor'} toggleStartAt={20} imgUrl={bowCursor} clicks={ props.clicks } withdrawClicks={ props.withdrawClicks } />
-            <WeaponItemClass price={30} item={'Sword'} cursor={'bowCursor'} toggleStartAt={30} imgUrl={'./../../img/bowCursor.png'} clicks={ props.clicks } withdrawClicks={ props.withdrawClicks } />
+            <WeaponItemClass price={30} item={'Sword'} cursor={'swordCursor'} toggleStartAt={30} imgUrl={swordCursor} clicks={ props.clicks } withdrawClicks={ props.withdrawClicks } />
         
        { /* <WeaponItemClass2 itemInfo={axe} />
         <WeaponItemClass2 itemInfo={bow} /> */ }
