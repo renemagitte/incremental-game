@@ -12,7 +12,8 @@ class WeaponItem extends Component {
         purchased: false,
         toggle: false,
         clicks: this.props.clicks,
-        toggleStartAt: 0
+        toggleStartAt: 0,
+        level: 0
     }
 
     handlePurchase = (event) => {
@@ -24,6 +25,7 @@ class WeaponItem extends Component {
             this.increasePrice();
 //            this.toggleBuyButton();
             this.handleCursor();
+            this.setLevel();
             
                     if(this.props.weapon.item == 'Axe Deodorant'){
                         alert("Better than pepperspray? Let's try!")
@@ -39,13 +41,17 @@ class WeaponItem extends Component {
       this.props.withdrawClicks(this.state.price); 
     }
     
+    setLevel = () => {
+      this.props.setLevel(this.state.level); 
+    }
+    
     increasePrice = () => {
         this.setState({ price: this.state.price + 2 }); // detta värde ska vara props, ej hårdkodat
     }
 
     handleCursor = (event) => {
         let cursorArea = document.getElementById('root');
-        let cursor = this.props.cursor;
+        let cursor = this.props.weapon.cursor;
         cursorArea.classList.add(cursor);
     }
 
@@ -66,7 +72,7 @@ class WeaponItem extends Component {
 
     componentDidMount(){
 
-            this.setState({ item: this.props.item, price: this.props.weapon.price, toggleStartAt: this.props.toggleStartAt, clicks: this.props.clicks  });
+            this.setState({ item: this.props.item, price: this.props.weapon.price, toggleStartAt: this.props.toggleStartAt, clicks: this.props.clicks, level: this.props.weapon.level  });
 
     }
 
@@ -86,9 +92,11 @@ class WeaponItem extends Component {
 
          
         <div className={weaponItemClass} id={ this.state.item }>
-            <img src={ this.props.weapon.imgUrl } /> <br />
-            Item: { this.props.weapon.item } <br />
-            Price: { this.state.price } <br />
+            <div className="weaponItemImg"><img src={ this.props.weapon.imgUrl } /> </div>
+            <div>
+                Item: { this.props.weapon.item } <br />
+                Price: { this.state.price } <br />
+            </div>
 
             {!this.state.purchased && <button onClick={this.handlePurchase} >Buy</button>}
 

@@ -66,7 +66,8 @@ class Vole extends Component {
         
         <Container>
             <div className="matrix">
-                  Welcome to the matrix...
+                  Åh, heliga makaroner!<br />
+                 You have totally entered the matrix!
             </div>
                 <div className="matrixCode" id="voleContainerrr">
                     <pre>{this.state.jsCode}</pre>

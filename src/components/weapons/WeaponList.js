@@ -22,6 +22,7 @@ function WeaponList(props) {
         cursor: 'axeCursor',
         imgUrl: axeCursor,
         toggleStartAt: 0,
+        level: 1
     }
     
     var axeDeo = {
@@ -30,6 +31,7 @@ function WeaponList(props) {
         cursor: 'axeDeoCursor',
         imgUrl: axeDeoCursor,
         toggleStartAt: 10,
+        level: 2
     }
     
     var bow = {
@@ -38,6 +40,7 @@ function WeaponList(props) {
         cursor: 'bowCursor',
         imgUrl: bowCursor,
         toggleStartAt: 20,
+        level: 3
     }
     
     var sword = {
@@ -46,6 +49,7 @@ function WeaponList(props) {
         cursor: 'swordCursor',
         imgUrl: swordCursor,
         toggleStartAt: 30,
+        level: 4
     }
     
     var shuriken = {
@@ -54,17 +58,18 @@ function WeaponList(props) {
         cursor: 'shurikenCursor',
         imgUrl: shurikenCursor,
         toggleStartAt: 40,
+        level: 5
     }
     
     return (
         
         <Container style="weaponListWrapper">
         
-            <WeaponItemClass weapon={axe} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } />
-            <WeaponItemClass weapon={axeDeo} withdrawClicks={ props.withdrawClicks } axeDeoSpecial={ props.axeDeoSpecial } clicks={ props.clicks }/>
-            <WeaponItemClass weapon={bow} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } />
-            <WeaponItemClass weapon={sword} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } />
-            <WeaponItemClass weapon={shuriken} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } />
+            <WeaponItemClass weapon={axe} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } setLevel={ props.setLevel }/>
+            <WeaponItemClass weapon={axeDeo} withdrawClicks={ props.withdrawClicks } axeDeoSpecial={ props.axeDeoSpecial } clicks={ props.clicks } setLevel={ props.setLevel }/>
+            <WeaponItemClass weapon={bow} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } setLevel={ props.setLevel } />
+            <WeaponItemClass weapon={sword} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } setLevel={ props.setLevel } />
+            <WeaponItemClass weapon={shuriken} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } setLevel={ props.setLevel } />
         
         </Container>
 

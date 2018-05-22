@@ -19,26 +19,45 @@ class App extends Component {
     state = {
         loggedIn: false,
         username: '',
-        clicks: 0
+        clicks: 0,
+        level: 0
     }
 
   handleUsername = (username) => {
-    this.setState({ loggedIn: true, username: username });
+        this.setState({ loggedIn: true, username: username });
   }
   
     handleClick = (clicks) => {
-        this.setState({ clicks: this.state.clicks + 1 });
+        if(this.state.level <= 1){
+            this.setState({ clicks: this.state.clicks + 1 });
+        }
+        if(this.state.level == 2){
+            this.setState({ clicks: this.state.clicks + 3 });
+        }
+        if(this.state.level == 3){
+            this.setState({ clicks: this.state.clicks + 5 });
+        }
+        if(this.state.level == 4){
+            this.setState({ clicks: this.state.clicks + 10 });
+        }
+        if(this.state.level == 5){
+            this.setState({ clicks: this.state.clicks + 15 });
+        }
       }
     
     withdrawClicks = (clicks) => {
         this.setState({ clicks: this.state.clicks - clicks });  
     }
     
+    setLevel = (level) => {
+        this.setState({ level: level });  
+    }
+    
     axeDeoSpecial = () => {
-            alert("Get free click every 5th second"); 
+            alert("Get free click every 3rd second"); 
         setInterval(() => { 
             this.setState({ clicks: this.state.clicks + 1 });
-        }, 5000); 
+        }, 3000); 
     }
 
 
@@ -62,8 +81,14 @@ checkLevel = () => {
       
         let view = <Welcome handleUsername={this.handleUsername}/>;
       
+        let usernameVariation = this.state.username + " voleslayer";
+        if(this.state.clicks >= 500){
+            /* It certainy is the name of Keanu Reeves character in the movie! */
+            usernameVariation = "Nemo";
+        }
+      
         let voleView = '';
-        if(this.state.clicks < 100){
+        if(this.state.clicks < 500){
             voleView = <Vole onClick={ this.handleClick }/>;  
         }else{
             voleView = <VoleJS onClick={ this.handleClick }/>
@@ -78,9 +103,9 @@ checkLevel = () => {
                     <ContainerHalf style="containerHalf">
                 { /* props.username */ }
             { /* <div> <NameField username={props.username} /></div> */ }
-                        <NameField username={ this.state.username } />
+                        <NameField username={ usernameVariation } />
                         <CounterField clicks={ this.state.clicks } />
-                        <WeaponList clicks={ this.state.clicks } withdrawClicks={ this.withdrawClicks } axeDeoSpecial={ this.axeDeoSpecial } />
+                        <WeaponList clicks={ this.state.clicks } withdrawClicks={ this.withdrawClicks } axeDeoSpecial={ this.axeDeoSpecial } setLevel={ this.setLevel } />
 
 
                 </ContainerHalf>

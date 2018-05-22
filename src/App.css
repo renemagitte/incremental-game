@@ -135,6 +135,15 @@ html{
     height: 160px;
     border: 2px solid gray;
     box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.weaponItemImg{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .weaponItemInactive{

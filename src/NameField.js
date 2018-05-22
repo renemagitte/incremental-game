@@ -6,7 +6,7 @@ function NameField(props) {
     return (
       <div className="nameFieldWrapper">
         <div className="nameField">
-            Aye, { props.username } voleslayer!
+            Aye, { props.username }!
         </div>
       </div>
     );
