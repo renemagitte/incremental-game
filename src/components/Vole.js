@@ -5,6 +5,7 @@ import Welcome from './../Welcome.js';
 import Main from './../Main.js';
 import Container from './layout/Container';
 import ContainerHalf from './layout/ContainerHalf';
+import vole from './../img/vole.jpg';
 
 class Vole extends Component {
     
@@ -50,7 +51,7 @@ class Vole extends Component {
         
         <Container>
             <div class="voleContainer">
-                <div className="voleImg" id="vole" onClick={(event) => {  this.incrementCounter(); this.shakeVole(); this.props.onClick();}}><img src={require('./../img/vole.jpg')} /></div>
+                <div className="voleImg" id="vole" onClick={(event) => {  this.incrementCounter(); this.shakeVole(); this.props.onClick();}}><img src={vole} /></div>
             </div>
                                                                                                                                                    
         </Container>

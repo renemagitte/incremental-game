@@ -73,7 +73,7 @@ class WeaponItem extends Component {
     render(){ 
          let weaponItemClass = "weaponItem weaponItemInactive";
 //         if(this.props.clicks > 0){
-         if(this.props.clicks >= this.state.toggleStartAt){
+         if(this.props.clicks >= this.props.weapon.toggleStartAt){
              weaponItemClass = "weaponItem";
          }
 
@@ -84,14 +84,18 @@ class WeaponItem extends Component {
 //     
     return (
 
+         
         <div className={weaponItemClass} id={ this.state.item }>
-            <img src={ this.props.imgUrl } />
-            Item: { this.props.item }
-            Price: { this.state.price }
+            <img src={ this.props.weapon.imgUrl } />
+            Item: { this.props.weapon.item }
+            Price: { this.props.weapon.price }
 
             {!this.state.purchased && <button onClick={this.handlePurchase} >Buy</button>}
 
         </div>
+    
+        
+        
 
     );
  }
