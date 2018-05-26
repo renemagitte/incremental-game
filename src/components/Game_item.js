@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './../App.css';
 
 import Container from './layout/Container';
-import UserInfo from './UserInfo';
-
+import Paragraph from './layout/Paragraph';
 
 class Game_item extends Component {
     
@@ -37,33 +36,31 @@ class Game_item extends Component {
     }
     
     handlePurchase = () => {
+        this.props.decrementCounter(this.state.price);
         this.setState({
             purchased: true,
             price: this.state.price + this.state.priceIncrease,
             purchasedAmount: this.state.purchasedAmount + 1
         })
-        
-        this.props.decrementCounter(this.state.price);
-        
     }
 
   render() {
       
       let buyButton = '';
-      if(this.props.counter > this.state.price){
+      if(this.props.counter >= this.state.price){
           buyButton = <button onClick={this.handlePurchase}>Buy</button>
       }
       
     return (
         
-        <p>
-            Image: ^_^<br />
-            Item: {this.state.name}<br/>
-            Price: {this.state.price}<br />
-            Purchased: {this.state.purchased ? 'Yes' : 'No'}<br />
-            If yes, then how many: {this.state.purchasedAmount}<br /> 
-            { buyButton }
-        </p>
+        <Container>
+            <Paragraph>Image: ^_^</Paragraph>
+            <Paragraph>Item: {this.state.name}</Paragraph>
+            <Paragraph>Price: {this.state.price}</Paragraph>
+            <Paragraph>Purchased: {this.state.purchased ? 'Yes' : 'No'}</Paragraph>
+            <Paragraph>If yes, then how many: {this.state.purchasedAmount}</Paragraph>
+            <Paragraph>{ buyButton }</Paragraph>
+        </Container>
         
     );
   }
