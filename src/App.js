@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import FirstPage from './components/FirstPage';
 import Container from './components/layout/Container';
+
+import FirstPage from './components/FirstPage';
+import Game from './components/Game';
 
 class App extends Component {
     
     state = {
-        username: '',
-        clicks: 0,
-        level: 0
+        username: ''
     }
 
     handleUsername = (username) => {
@@ -21,7 +21,7 @@ class App extends Component {
         let view;
 
         if(this.state.username){
-            view = "hej! det finns ett username. vidare till spelsidan..."
+            view = <Game username={this.state.username}/>
         }else{
             view = <FirstPage handleUsername={this.handleUsername} />;  
         }

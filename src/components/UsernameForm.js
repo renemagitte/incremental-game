@@ -40,19 +40,6 @@ class UsernameForm extends Component {
                 
                 <UsernameForm_input onChange={this.handleChange} username={this.state.username}/> 
         
-            { /* 
-                <input 
-                    type="username"
-                    className="form-control"
-                    name="username"
-                    id="username"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter username"
-                    onChange={this.handleChange}
-                    value={this.state.username}
-                  />
-            */ }
-        
                 <UsernameForm_submit />
         
             </form>
