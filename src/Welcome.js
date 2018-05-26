@@ -34,7 +34,7 @@ class Welcome extends Component {
     return (
     <div className="welcome">
         <div className="welcomeCentered">
-            <div className="welcomeTitle">Vole hunting</div>
+            <div className="welcomeTitle">Croesus Clicker</div>
             <img src={ voleSilouette } />
 
               <form onSubmit={this.handleUsername}>

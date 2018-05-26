@@ -66,10 +66,10 @@ function WeaponList(props) {
         <Container style="weaponListWrapper">
         
             <WeaponItemClass weapon={axe} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } setLevel={ props.setLevel }/>
-            <WeaponItemClass weapon={axeDeo} withdrawClicks={ props.withdrawClicks } axeDeoSpecial={ props.axeDeoSpecial } clicks={ props.clicks } setLevel={ props.setLevel }/>
+        { /* <WeaponItemClass weapon={axeDeo} withdrawClicks={ props.withdrawClicks } axeDeoSpecial={ props.axeDeoSpecial } clicks={ props.clicks } setLevel={ props.setLevel }/>
             <WeaponItemClass weapon={bow} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } setLevel={ props.setLevel } />
             <WeaponItemClass weapon={sword} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } setLevel={ props.setLevel } />
-            <WeaponItemClass weapon={shuriken} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } setLevel={ props.setLevel } />
+            <WeaponItemClass weapon={shuriken} withdrawClicks={ props.withdrawClicks } clicks={ props.clicks } setLevel={ props.setLevel } /> */ }
         
         </Container>
 
