@@ -30,10 +30,20 @@ class Game extends Component {
                 level: level,
             })
         }
-    }
 
+    }
+    
+//      Tickar upp men bara 1 åt gången:
+//    incrementCounter = (clicks, increments) => {
+//        this.setState({ counter: this.state.counter + this.state.increments })
+//    }
+    
     incrementCounter = () => {
         this.setState({ counter: this.state.counter + this.state.increments })
+    }
+    
+    incrementIncrements = () => {
+        this.setState({ increments: this.state.increments * this.state.multiplyWith })
     }
     
     decrementCounter = (price) => {
@@ -47,8 +57,8 @@ class Game extends Component {
         increments: 1,
         price: 10,
         priceIncrease: 2,
-        purchased: false,
-        purchasedAmount: 0,
+        purchased: true,
+        purchasedAmount: 1,
         image: ''
     }
 
@@ -81,46 +91,51 @@ class Game extends Component {
         return (
 
             <Container style="game_Container">
-            
+
                 <Container style="game_target">
-                    <Game_target incrementCounter={this.incrementCounter} />
+                    <Game_target incrementCounter={this.incrementCounter}
+                                level={this.state.level}
+                />
+            </Container>
+
+            <Container style="game_panel">
+
+                <Container style="game_userinfo">
+                    <UserInfo username={this.props.username}  />
                 </Container>
-            
-                <Container style="game_panel">
-            
-                    <Container style="game_userinfo">
-                        <UserInfo username={this.props.username}  />
-                    </Container>
 
-                    <Container style="game_stats">
-                        <Game_stats counter={this.state.counter} />
-                    </Container>
+                <Container style="game_stats">
+                    <Game_stats counter={this.state.counter} />
+                </Container>
 
-                    <Container style="game_itemscontainer">
-            
-                        <Game_item style="game_item" 
-                                    item={this.item1} 
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter}
-                        />
-                        <Game_item style="game_item" 
-                                    item={this.item2} 
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter} 
-                        />
-                        <Game_item style="game_item" 
-                                    item={this.item3} 
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter} 
-                        />
-                    </Container>
-            
+                <Container style="game_itemscontainer">
+
+                    <Game_item style="game_item" 
+                                item={this.item1} 
+                                counter={this.state.counter} 
+                                setNewIncrement={this.setNewIncrement} 
+                                setGameState={this.setGameState} 
+                                decrementCounter={this.decrementCounter}
+                    />
+            {/*
+                    <Game_item style="game_item" 
+                                item={this.item2} 
+                                counter={this.state.counter} 
+                                setGameState={this.setGameState} 
+                                decrementCounter={this.decrementCounter} 
+                    />
+                    <Game_item style="game_item" 
+                                item={this.item3} 
+                                counter={this.state.counter} 
+                                setGameState={this.setGameState} 
+                                decrementCounter={this.decrementCounter} 
+                    />
+            */ }
                 </Container>
 
             </Container>
+
+        </Container>
 
 
         );

@@ -14,7 +14,7 @@ class Game_item extends Component {
         priceIncrease: 0,
         purchased: false,
         purchasedAmount: 0,
-        image: ''
+        image: '',
     }
 
     componentDidMount(){
@@ -35,20 +35,19 @@ class Game_item extends Component {
         this.setState({
             purchased: true,
             price: this.state.price + this.state.priceIncrease,
-            purchasedAmount: this.state.purchasedAmount + 1
+            purchasedAmount: this.state.purchasedAmount + 1,
+            increments: this.state.increments
         })
-        this.props.setGameState(this.state.increments, this.state.level)
+        this.props.setGameState((this.state.increments*this.state.purchasedAmount), this.state.level)
     }
-
-    
-    
-    
     
     render() {
       
       let buyButton = '';
       if(this.props.counter >= this.state.price){
-          buyButton = <button onClick={this.handlePurchase}>Buy</button>
+          buyButton = <button onClick={this.handlePurchase}
+                            /*    onClick={(event) => {  this.handlePurchase(); this.props.setNewIncrement(this.state.updatedIncrement); }} */
+          className="button">Buy</button>
       }
       
     return (

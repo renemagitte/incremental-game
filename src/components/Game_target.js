@@ -11,7 +11,9 @@ class Game_target extends Component {
       
     return (
 
-        <button onClick={this.props.incrementCounter} className="button">Klicka här</button>
+        <button /* onClick={this.props.incrementCounter} */
+        onClick={(event) => {  this.props.incrementCounter(); }}
+        className="button">Klicka här</button>
         
     );
   }
