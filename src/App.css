@@ -1,6 +1,4 @@
-html{
-/*    cursor: url(smiley.png) 2 2, pointer;*/
-}
+
 
 .App {
   text-align: center;
@@ -220,11 +218,89 @@ html{
 /******************************************************************************************************************************/
 /*** NEW ***/
 
-.app__Container{
-    width: 100%;
+html, body{
+/*    cursor: url(smiley.png) 2 2, pointer;*/
+    margin: 0px auto;
 }
 
-.firstPage__Container{
-    width: 100%;  
-    background-color: pink;
+.root .rootJSX{
+    margin: 0px auto;
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
 }
+
+/*
+.rootJSX{
+    margin: 0px auto;
+    width: 100%;
+    height: 100vh;
+    background-color: hotpink;
+}
+*/
+
+p{
+    margin: 0px auto;
+    padding: 5px;
+    line-height: 0.5;
+    color: white;
+}
+
+.game_Container{
+    margin: 0px auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-image: url(img/fireblackbg.png);
+}
+
+.game_target{
+    margin: 0px auto;
+    width: 50%; 
+    height: 100vh;
+    border: 1px solid purple;
+    box-sizing: border-box;
+}
+
+.game_panel{
+    margin: 0px auto;
+    width: 50%; 
+    height: 100vh;
+    border: 1px solid purple;
+    box-sizing: border-box;
+}
+    .game_userinfo{
+        width: 100%;  
+        height: 60px;
+        text-align: right;
+        padding: 10px;
+        padding-right: 60px;
+        
+    }   
+    .game_userinfo p{
+        padding-right: 50px;
+    }
+
+    .game_stats{
+        width: 100%;  
+        height: 60px;
+    }
+
+    .game_itemscontainer{
+        margin: 0px auto;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+        .game_item{
+            width: 160px;  
+            height: 160px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }

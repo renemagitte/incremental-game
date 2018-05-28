@@ -8,6 +8,7 @@ class Game_item extends Component {
     
     state = {
         name: '',
+        level: 0, /* To determine whether an item shall be displayed or not, after bought once but balance is too low to buy again */
         increments: 1,
         price: 0,
         priceIncrease: 0,
@@ -16,12 +17,10 @@ class Game_item extends Component {
         image: ''
     }
 
-
-
-    
     componentDidMount(){
         this.setState({ 
             name: this.props.item.name,
+            level: this.props.item.level,
             increments: this.props.item.increments,
             price: this.props.item.price,
             priceIncrease: this.props.item.priceIncrease,
@@ -31,10 +30,6 @@ class Game_item extends Component {
         })
     }
 
-    setItem = () => {
-      this.props.setItem(this.state.name, this.state.increments); 
-    }
-    
     handlePurchase = () => {
         this.props.decrementCounter(this.state.price);
         this.setState({
@@ -42,9 +37,14 @@ class Game_item extends Component {
             price: this.state.price + this.state.priceIncrease,
             purchasedAmount: this.state.purchasedAmount + 1
         })
+        this.props.setGameState(this.state.increments, this.state.level)
     }
 
-  render() {
+    
+    
+    
+    
+    render() {
       
       let buyButton = '';
       if(this.props.counter >= this.state.price){
@@ -53,7 +53,7 @@ class Game_item extends Component {
       
     return (
         
-        <Container>
+        <Container style="game_item">
             <Paragraph>Image: ^_^</Paragraph>
             <Paragraph>Item: {this.state.name}</Paragraph>
             <Paragraph>Price: {this.state.price}</Paragraph>

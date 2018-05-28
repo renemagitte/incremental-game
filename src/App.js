@@ -31,7 +31,7 @@ class App extends Component {
          
     return (
         
-        <Container>
+        <Container style="rootJSX">
         
             { view  }
 

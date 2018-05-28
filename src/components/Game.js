@@ -13,32 +13,37 @@ class Game extends Component {
     state = {
         /* Game state */
         counter: 0,
-        itemsAvailable: 1,
+        level: 1, /* decides whether items shall be displayed or not */
         
         /* Current item */
-        name: '',
         increments: 1
     }
 
     /**** Functions ***/
-    setItem = (name, increments) => {
+    setGameState = (increments, level) => {
         this.setState({ 
-            name: name,
             increments: increments
         })
+        
+        if(this.state.level < level){
+            this.setState({ 
+                level: level,
+            })
+        }
     }
 
     incrementCounter = () => {
-        this.setState({ counter: this.state.counter + this.state.increments})
+        this.setState({ counter: this.state.counter + this.state.increments })
     }
     
     decrementCounter = (price) => {
-        this.setState({ counter: this.state.counter - price})
+        this.setState({ counter: this.state.counter - price })
     }
     
     /**** Items ***/
     item1 = {
         name: 'item1',
+        level: 1,
         increments: 1,
         price: 10,
         priceIncrease: 2,
@@ -49,9 +54,21 @@ class Game extends Component {
 
     item2 = {
         name: 'item2',
+        level: 2,
         increments: 5,
         price: 20,
         priceIncrease: 10,
+        purchased: false,
+        purchasedAmount: 0,
+        image: ''
+    }
+
+    item3 = {
+        name: 'item3',
+        level: 3,
+        increments: 10,
+        price: 40,
+        priceIncrease: 20,
         purchased: false,
         purchasedAmount: 0,
         image: ''
@@ -63,27 +80,44 @@ class Game extends Component {
       
         return (
 
-            <Container>
-
-                <Container>
-                    <UserInfo username={this.props.username}  />
-                </Container>
-
-                <Container>
-                    <Game_stats counter={this.state.counter} />
-                </Container>
+            <Container style="game_Container">
             
-                <Container>
+                <Container style="game_target">
                     <Game_target incrementCounter={this.incrementCounter} />
                 </Container>
+            
+                <Container style="game_panel">
+            
+                    <Container style="game_userinfo">
+                        <UserInfo username={this.props.username}  />
+                    </Container>
 
-                <Container>
-                    <Game_item counter={this.state.counter} item={this.item1} 
-                                setItem={this.setItem} decrementCounter={this.decrementCounter}
-                    />
-                    <Game_item counter={this.state.counter} item={this.item2} 
-                                setItem={this.setItem} decrementCounter={this.decrementCounter} 
-                    />
+                    <Container style="game_stats">
+                        <Game_stats counter={this.state.counter} />
+                    </Container>
+
+                    <Container style="game_itemscontainer">
+            
+                        <Game_item style="game_item" 
+                                    item={this.item1} 
+                                    counter={this.state.counter} 
+                                    setGameState={this.setGameState} 
+                                    decrementCounter={this.decrementCounter}
+                        />
+                        <Game_item style="game_item" 
+                                    item={this.item2} 
+                                    counter={this.state.counter} 
+                                    setGameState={this.setGameState} 
+                                    decrementCounter={this.decrementCounter} 
+                        />
+                        <Game_item style="game_item" 
+                                    item={this.item3} 
+                                    counter={this.state.counter} 
+                                    setGameState={this.setGameState} 
+                                    decrementCounter={this.decrementCounter} 
+                        />
+                    </Container>
+            
                 </Container>
 
             </Container>
