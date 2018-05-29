@@ -7,7 +7,9 @@ import UserInfo from './UserInfo';
 
 class Game_target extends Component {
 
-  render() {      
+  render() {
+      
+    
       
     return (
 

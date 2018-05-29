@@ -41,10 +41,10 @@ class Game extends Component {
         this.setState({ counter: this.state.counter - price })
     }
     
-    incrementSpecial = () => {
+    incrementSpecialInterval3000 = () => {
             alert("Get free click every 3rd second"); 
         setInterval(() => { 
-            this.setState({ clicks: this.state.clicks + 1 });
+            this.setState({ counter: this.state.counter + 1 });
         }, 3000); 
     }
     
@@ -119,6 +119,7 @@ class Game extends Component {
                                 counter={this.state.counter} 
                                 setGameState={this.setGameState} 
                                 decrementCounter={this.decrementCounter} 
+                                incrementSpecialInterval3000={this.incrementSpecialInterval3000}
                                 
                     />
             
