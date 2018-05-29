@@ -7,6 +7,7 @@ import Game_target from './Game_target';
 import Game_stats from './Game_stats';
 import Game_item from './Game_item';
 
+import item1 from './../img/item1.png';
 
 class Game extends Component {
     
@@ -55,9 +56,8 @@ class Game extends Component {
         increments: 1,
         price: 10,
         priceIncrease: 2,
-        purchased: true,
         purchasedAmount: 1,
-        image: ''
+        image: item1
     }
 
     item2 = {
@@ -66,8 +66,7 @@ class Game extends Component {
         increments: 3,
         price: 20,
         priceIncrease: 10,
-        purchased: false,
-        purchasedAmount: 1,
+        purchasedAmount: 0,
         image: ''
     }
 
@@ -77,8 +76,17 @@ class Game extends Component {
         increments: 5,
         price: 40,
         priceIncrease: 20,
-        purchased: false,
-        purchasedAmount: 1,
+        purchasedAmount: 0,
+        image: ''
+    }
+
+    item4 = {
+        name: 'item4',
+        level: 4,
+        increments: 10,
+        price: 75,
+        priceIncrease: 50,
+        purchasedAmount: 0,
         image: ''
     }
  
@@ -92,10 +100,10 @@ class Game extends Component {
                 <Container style="game_target">
                     <Game_target incrementCounter={this.incrementCounter}
                                 level={this.state.level}
-                />
-            </Container>
+                    />
+                </Container>
 
-            <Container style="game_panel">
+                <Container style="game_panel">
 
                 <Container style="game_userinfo">
                     <UserInfo username={this.props.username}  />
@@ -125,6 +133,13 @@ class Game extends Component {
             
                     <Game_item style="game_item" 
                                 item={this.item3} 
+                                counter={this.state.counter} 
+                                setGameState={this.setGameState} 
+                                decrementCounter={this.decrementCounter} 
+                    />
+            
+                    <Game_item style="game_item" 
+                                item={this.item4} 
                                 counter={this.state.counter} 
                                 setGameState={this.setGameState} 
                                 decrementCounter={this.decrementCounter} 
