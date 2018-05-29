@@ -33,21 +33,19 @@ class Game extends Component {
 
     }
     
-//      Tickar upp men bara 1 åt gången:
-//    incrementCounter = (clicks, increments) => {
-//        this.setState({ counter: this.state.counter + this.state.increments })
-//    }
-    
     incrementCounter = () => {
         this.setState({ counter: this.state.counter + this.state.increments })
     }
     
-    incrementIncrements = () => {
-        this.setState({ increments: this.state.increments * this.state.multiplyWith })
-    }
-    
     decrementCounter = (price) => {
         this.setState({ counter: this.state.counter - price })
+    }
+    
+    incrementSpecial = () => {
+            alert("Get free click every 3rd second"); 
+        setInterval(() => { 
+            this.setState({ clicks: this.state.clicks + 1 });
+        }, 3000); 
     }
     
     /**** Items ***/
@@ -65,29 +63,28 @@ class Game extends Component {
     item2 = {
         name: 'item2',
         level: 2,
-        increments: 5,
+        increments: 3,
         price: 20,
         priceIncrease: 10,
         purchased: false,
-        purchasedAmount: 0,
+        purchasedAmount: 1,
         image: ''
     }
 
     item3 = {
         name: 'item3',
         level: 3,
-        increments: 10,
+        increments: 5,
         price: 40,
         priceIncrease: 20,
         purchased: false,
-        purchasedAmount: 0,
+        purchasedAmount: 1,
         image: ''
     }
  
 
-    render() {
-         
-      
+    render() {   
+        
         return (
 
             <Container style="game_Container">
@@ -113,24 +110,25 @@ class Game extends Component {
                     <Game_item style="game_item" 
                                 item={this.item1} 
                                 counter={this.state.counter} 
-                                setNewIncrement={this.setNewIncrement} 
                                 setGameState={this.setGameState} 
                                 decrementCounter={this.decrementCounter}
                     />
-            {/*
+
                     <Game_item style="game_item" 
                                 item={this.item2} 
                                 counter={this.state.counter} 
                                 setGameState={this.setGameState} 
                                 decrementCounter={this.decrementCounter} 
+                                
                     />
+            
                     <Game_item style="game_item" 
                                 item={this.item3} 
                                 counter={this.state.counter} 
                                 setGameState={this.setGameState} 
                                 decrementCounter={this.decrementCounter} 
                     />
-            */ }
+
                 </Container>
 
             </Container>

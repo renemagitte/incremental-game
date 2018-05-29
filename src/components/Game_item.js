@@ -9,10 +9,10 @@ class Game_item extends Component {
     state = {
         name: '',
         level: 0, /* To determine whether an item shall be displayed or not, after bought once but balance is too low to buy again */
-        increments: 1,
+        increments: 0,
         price: 0,
         priceIncrease: 0,
-        purchased: false,
+        //purchased: false,
         purchasedAmount: 0,
         image: '',
     }
@@ -24,7 +24,7 @@ class Game_item extends Component {
             increments: this.props.item.increments,
             price: this.props.item.price,
             priceIncrease: this.props.item.priceIncrease,
-            purchased: this.props.item.purchased,
+            //purchased: this.props.item.purchased,
             purchasedAmount: this.props.item.purchasedAmount,
             image: this.props.item.image
         })
@@ -33,12 +33,13 @@ class Game_item extends Component {
     handlePurchase = () => {
         this.props.decrementCounter(this.state.price);
         this.setState({
-            purchased: true,
+            //purchased: true,
             price: this.state.price + this.state.priceIncrease,
             purchasedAmount: this.state.purchasedAmount + 1,
-            increments: this.state.increments
-        })
-        this.props.setGameState((this.state.increments*this.state.purchasedAmount), this.state.level)
+//            increments: this.state.increments
+        }, this.props.setGameState((this.state.increments*this.state.purchasedAmount), (this.state.level + 1)));
+//        let currentIncrement = this.state.increments*this.state.purchasedAmount;
+//        this.props.setGameState(currentIncrement, (this.state.level + 1))
     }
     
     render() {
@@ -49,15 +50,22 @@ class Game_item extends Component {
                             /*    onClick={(event) => {  this.handlePurchase(); this.props.setNewIncrement(this.state.updatedIncrement); }} */
           className="button">Buy</button>
       }
+        
+        
+    let gameItemStyle = "game_item";
+    if((this.state.level > 1) && ((this.props.counter+(this.state.price/3)) < this.state.price)){
+        gameItemStyle = "game_item game_item_inactive"
+    }
+
       
     return (
         
-        <Container style="game_item">
+        <Container style={gameItemStyle}>
             <Paragraph>Image: ^_^</Paragraph>
             <Paragraph>Item: {this.state.name}</Paragraph>
             <Paragraph>Price: {this.state.price}</Paragraph>
             <Paragraph>Purchased: {this.state.purchased ? 'Yes' : 'No'}</Paragraph>
-            <Paragraph>If yes, then how many: {this.state.purchasedAmount}</Paragraph>
+            <Paragraph>If yes, then how many: {this.state.purchased ? this.state.purchasedAmount : ''}</Paragraph>
             <Paragraph>{ buyButton }</Paragraph>
         </Container>
         
