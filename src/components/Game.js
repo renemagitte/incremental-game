@@ -3,6 +3,7 @@ import './../App.css';
 
 import Container from './layout/Container';
 import UserInfo from './UserInfo';
+import Soundtrack from './Soundtrack';
 import Game_target from './Game_target';
 import Game_stats from './Game_stats';
 import Game_item from './Game_item';
@@ -97,7 +98,12 @@ class Game extends Component {
     }
  
 
-    render() {   
+    render() { 
+        
+        if(this.state.level == 1){
+            let cursorArea = document.getElementById('root');
+            cursorArea.classList.add('item1');
+        }
         
         return (
 
@@ -112,6 +118,10 @@ class Game extends Component {
 
                     <Container style="game_userinfo">
                         <UserInfo username={this.props.username}  />
+                    </Container>
+            
+                    <Container style="game_soundtrack">
+                        <Soundtrack level={this.state.level}  />
                     </Container>
 
                     <Container style="game_stats">

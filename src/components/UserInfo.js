@@ -6,7 +6,7 @@ function UserInfo(props) {
     return (
         
         <Paragraph username={props.username}>
-            Hej {props.username}!
+            Ok, so your name is {props.username}.
         </Paragraph>
         
     );

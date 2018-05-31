@@ -328,6 +328,7 @@ p{
         }
 
         
+/*
         @keyframes shake {
             0% { transform: translate(1px, 1px) rotate(0deg); }
             10% { transform: translate(-1px, -2px) rotate(-2deg); }
@@ -341,9 +342,9 @@ p{
             90% { transform: translate(1px, 2px) rotate(0deg); }
             100% { transform: translate(1px, -2px) rotate(-2deg); }
         }
+*/
         
 
-/*
         @keyframes shake {
             0% { transform: translate(1px, 1px) rotate(0deg); }
             10% { transform: translate(-1px, -2px) rotate(-3deg); }
@@ -357,7 +358,6 @@ p{
             90% { transform: translate(1px, 2px) rotate(-3deg); }
             100% { transform: translate(1px, -2px) rotate(0deg); }
         }
-*/
 
         .animatedCursor{
             cursor: none !important;
@@ -373,13 +373,27 @@ p{
     margin: 0px auto;
     width: 50%; 
     height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.game_soundtrack{
+         width: 20%;  
+        height: 60px;  
+    border: 1px solid red;
+    box-sizing: border-box;
 }
     .game_userinfo{
-        width: 100%;  
+        width: 80%;  
         height: 60px;
         text-align: right;
         padding: 10px;
         padding-right: 60px;
+        font-family: 'Yeon Sung', cursive;
+        color: lightgray;
+        border: 1px solid purple;
+        box-sizing: border-box;
         
     }   
     .game_userinfo p{
