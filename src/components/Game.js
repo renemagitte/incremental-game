@@ -8,6 +8,9 @@ import Game_stats from './Game_stats';
 import Game_item from './Game_item';
 
 import item1 from './../img/item1.png';
+import item2 from './../img/item2.png';
+import item3 from './../img/item3.png';
+import item4 from './../img/item4.png';
 
 class Game extends Component {
     
@@ -43,7 +46,6 @@ class Game extends Component {
     }
     
     incrementSpecialInterval3000 = () => {
-            alert("Get free click every 3rd second"); 
         setInterval(() => { 
             this.setState({ counter: this.state.counter + 1 });
         }, 3000); 
@@ -51,43 +53,47 @@ class Game extends Component {
     
     /**** Items ***/
     item1 = {
-        name: 'item1',
+        name: 'Axe',
         level: 1,
         increments: 1,
         price: 10,
         priceIncrease: 2,
         purchasedAmount: 1,
-        image: item1
+        image: item1,
+        cursor: 'item1'
     }
 
     item2 = {
-        name: 'item2',
+        name: 'Axe Deodorant',
         level: 2,
         increments: 3,
         price: 20,
         priceIncrease: 10,
         purchasedAmount: 0,
-        image: ''
+        image: item2,
+        cursor:'item2'
     }
 
     item3 = {
-        name: 'item3',
+        name: 'Bow',
         level: 3,
         increments: 5,
         price: 40,
         priceIncrease: 20,
         purchasedAmount: 0,
-        image: ''
+        image: item3,
+        cursor: 'item3'
     }
 
     item4 = {
-        name: 'item4',
+        name: 'Sword',
         level: 4,
         increments: 10,
         price: 75,
         priceIncrease: 50,
         purchasedAmount: 0,
-        image: ''
+        image: item4,
+        cursor: 'item4'
     }
  
 
@@ -95,57 +101,56 @@ class Game extends Component {
         
         return (
 
-            <Container style="game_Container">
+            <Container style="game_Container" id="game_Container">
 
-                <Container style="game_target">
-                    <Game_target incrementCounter={this.incrementCounter}
+                    <Game_target style="game_target" incrementCounter={this.incrementCounter}
                                 level={this.state.level}
                     />
-                </Container>
+   
 
                 <Container style="game_panel">
 
-                <Container style="game_userinfo">
-                    <UserInfo username={this.props.username}  />
-                </Container>
+                    <Container style="game_userinfo">
+                        <UserInfo username={this.props.username}  />
+                    </Container>
 
-                <Container style="game_stats">
-                    <Game_stats counter={this.state.counter} />
-                </Container>
+                    <Container style="game_stats">
+                        <Game_stats counter={this.state.counter} />
+                    </Container>
 
-                <Container style="game_itemscontainer">
+                    <Container style="game_itemscontainer">
 
-                    <Game_item style="game_item" 
-                                item={this.item1} 
-                                counter={this.state.counter} 
-                                setGameState={this.setGameState} 
-                                decrementCounter={this.decrementCounter}
-                    />
+                        <Game_item style="game_item" 
+                                    item={this.item1} 
+                                    counter={this.state.counter} 
+                                    setGameState={this.setGameState} 
+                                    decrementCounter={this.decrementCounter}
+                        />
 
-                    <Game_item style="game_item" 
-                                item={this.item2} 
-                                counter={this.state.counter} 
-                                setGameState={this.setGameState} 
-                                decrementCounter={this.decrementCounter} 
-                                incrementSpecialInterval3000={this.incrementSpecialInterval3000}
-                                
-                    />
-            
-                    <Game_item style="game_item" 
-                                item={this.item3} 
-                                counter={this.state.counter} 
-                                setGameState={this.setGameState} 
-                                decrementCounter={this.decrementCounter} 
-                    />
-            
-                    <Game_item style="game_item" 
-                                item={this.item4} 
-                                counter={this.state.counter} 
-                                setGameState={this.setGameState} 
-                                decrementCounter={this.decrementCounter} 
-                    />
+                        <Game_item style="game_item" 
+                                    item={this.item2} 
+                                    counter={this.state.counter} 
+                                    setGameState={this.setGameState} 
+                                    decrementCounter={this.decrementCounter} 
+                                    incrementSpecialInterval3000={this.incrementSpecialInterval3000}
 
-                </Container>
+                        />
+
+                        <Game_item style="game_item" 
+                                    item={this.item3} 
+                                    counter={this.state.counter} 
+                                    setGameState={this.setGameState} 
+                                    decrementCounter={this.decrementCounter} 
+                        />
+
+                        <Game_item style="game_item" 
+                                    item={this.item4} 
+                                    counter={this.state.counter} 
+                                    setGameState={this.setGameState} 
+                                    decrementCounter={this.decrementCounter} 
+                        />
+
+                    </Container>
 
             </Container>
 
