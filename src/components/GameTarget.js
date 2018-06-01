@@ -7,13 +7,13 @@ import target from './../img/target.png';
 import targetVariation from './../img/targetVariation.png';
 
 
-class Game_target extends Component {
+class GameTarget extends Component {
     
     messages = {
-        level1: "Message 1",
-        level3: "Message 3",
-        level4: "Message 4",
-        level5: "Message 5"
+        level1: "Message 1: bla bla bla bla bla bla bla bla",
+        level3: "Message 3: bla bla bla bla bla bla bla bla",
+        level4: "Message 4: bla bla bla bla bla bla bla bla",
+        level5: "Message 5: bla bla bla bla bla bla bla bla"
     }
 
     animateTarget = (event) => {
@@ -72,19 +72,19 @@ class Game_target extends Component {
     }
     
 
-//    typeWriter = (text) => {
-//        
-//        var i = 0;
-//        var speed = 50;
-//        let textt= text;
-//        
-//          if (i < textt.length) {
-//            let div = document.getElementById('game_target_message')
-//            div.innerHTML += textt.charAt(i);
-//            i++;
-//            setTimeout(this.typeWriter, speed);
-//          }
-//    }
+    typeWriter = (message) => {
+        
+        var i = 0;
+        var speed = 50;
+        let text = message;
+        
+          if (i < text.length) {
+            let div = document.getElementById('game_target_message')
+            div.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(this.typeWriter, speed);
+          }
+    }
  
     
 
@@ -93,7 +93,7 @@ class Game_target extends Component {
     let message = '';
               
     if(this.props.level == 1){
-      message = this.messages.level1;  
+      message = this.typeWriter(this.messages.level1);  
     }
     if(this.props.level == 2){
       message = this.messages.level1;
@@ -107,8 +107,7 @@ class Game_target extends Component {
       
     return (
         
-            <div className={this.props.style}>
-
+            <div className="game_target">
         
                 <div className="game_target_message" id="game_target_message">
                     <p>Croesus says:</p>
@@ -125,4 +124,4 @@ class Game_target extends Component {
   }
 }
 
-export default Game_target;
+export default GameTarget;

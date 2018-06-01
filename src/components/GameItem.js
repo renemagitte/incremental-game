@@ -10,7 +10,7 @@ import item3 from './../img/item3.png';
 
 
 
-class Game_item extends Component {
+class GameItem extends Component {
     
     state = {
         name: '',
@@ -71,6 +71,7 @@ class Game_item extends Component {
         let regexCursorClass = /item\d/;
         cursorArea.classList.remove(regexCursorClass);
         let cursor = this.state.cursor;
+        window.getComputedStyle(cursorArea).opacity;
         cursorArea.classList.add(cursor);
     }
     
@@ -100,8 +101,8 @@ class Game_item extends Component {
       
         return (
 
-            <Container style={gameItemStyle}>
-                <Container style="game_item_image">
+            <Container stylee={gameItemStyle}>
+                <Container stylee="game_item_image">
                         <img src={ this.state.image } />
                 </Container>
                 <Paragraph>Item: {this.state.name}</Paragraph>
@@ -114,4 +115,4 @@ class Game_item extends Component {
     }
 }
 
-export default Game_item;
+export default GameItem;

@@ -13,7 +13,7 @@ class Sountrack extends Component {
         return (
 
             <div>
-            <audio src={song2} controls width="180" height="90" loop="false" autostart="false" hidden="false">
+            <audio src={song2} controls>
                 <p>If you are reading this, it is because your browser does not support the audio element.</p>
             </audio>
             

@@ -1,7 +1,7 @@
 import React from 'react';
 import './../App.css';
 
-function Game_stats(props) {
+function GameStats(props) {
     return (
         
         <p>You have clicked {props.counter} times.</p>
@@ -9,4 +9,4 @@ function Game_stats(props) {
     );
 }
 
-export default Game_stats;
+export default GameStats;
