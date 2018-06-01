@@ -38,11 +38,17 @@ class GameItem extends Component {
 
     handlePurchase = (event) => {
         event.preventDefault();
-        this.handleCursor();
+//        this.handleCursor();
         this.decrementCounter();
         this.updateGameStates();
         this.checkForIncrementSpecials();
+//        this.setCursor(this.state.cursor);
+        this.props.setCursor(this.state.cursor);
     }
+    
+//    setCursor = (cursor) => {
+//        this.props.setCursor(cursor);
+//    }
     
     updateGameStates = () => {
         this.setState(

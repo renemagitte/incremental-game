@@ -8,7 +8,7 @@ class FirstPage extends Component {
   render() {
       
     return (
-        <Container style="first_page">
+        <Container stylee="first_page">
             <UsernameForm handleUsername={ this.props.handleUsername } />
         </Container>
       );

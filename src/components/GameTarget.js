@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import './../App.css';
 
 import Container from './layout/Container';
-import UserInfo from './UserInfo';
 import target from './../img/target.png';
 import targetVariation from './../img/targetVariation.png';
 
 
 class GameTarget extends Component {
+    
+    state = {
+        message: ''
+    }
     
     messages = {
         level1: "Message 1: bla bla bla bla bla bla bla bla",
@@ -71,7 +74,7 @@ class GameTarget extends Component {
         }, 600);
     }
     
-
+/*
     typeWriter = (message) => {
         
         var i = 0;
@@ -79,29 +82,38 @@ class GameTarget extends Component {
         let text = message;
         
           if (i < text.length) {
-            let div = document.getElementById('game_target_message')
-            div.innerHTML += text.charAt(i);
-            i++;
+              
+//            document.getElementById("game_target_message").innerHTML += text.charAt(i); 
+//            i++;
+              
+            this.setState({ message: text.charAt(i) })
+              
             setTimeout(this.typeWriter, speed);
           }
     }
- 
+*/
+    
+//    setTimeout(function(){ 
+//        
+//        alert("Hello"); 
+//    }, 50);
     
 
   render() {
       
     let message = '';
               
-    if(this.props.level == 1){
-      message = this.typeWriter(this.messages.level1);  
+    if(this.props.level === 1){
+//      message = this.typeWriter(this.messages.level1);  
+    message = this.messages.level1;
     }
-    if(this.props.level == 2){
+    if(this.props.level === 2){
       message = this.messages.level1;
     }
-    if(this.props.level == 3){
+    if(this.props.level === 3){
       message = this.messages.level3;
     }
-    if(this.props.level == 4){
+    if(this.props.level === 4){
       message = this.messages.level4;
     }
       
@@ -112,7 +124,7 @@ class GameTarget extends Component {
                 <div className="game_target_message" id="game_target_message">
                     <p>Croesus says:</p>
 
-                    { message }
+                    { this.state.message }
                 </div>
 
                 <div className="game_target_img" id="target" onClick={(event) => {  this.props.incrementCounter(); this.animateTarget(); this.animateCursor(); this.targetVariation(); }}>

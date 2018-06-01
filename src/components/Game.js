@@ -22,7 +22,8 @@ class Game extends Component {
         level: 1, /* decides whether items shall be displayed or not */
         
         /* Current item */
-        increments: 1
+        increments: 1,
+        cursor: 'item1'
     }
 
     /**** Functions ***/
@@ -51,6 +52,10 @@ class Game extends Component {
         setInterval(() => { 
             this.setState({ counter: this.state.counter + 1 });
         }, 3000); 
+    }
+    
+    setCursor = (cursor) => {
+        this.setState({ cursor: cursor });
     }
     
     /**** Items ***/
@@ -112,14 +117,23 @@ class Game extends Component {
 
     render() { 
         
-        if(this.state.level === 1){
-            let cursorArea = document.getElementById('root');
-            cursorArea.classList.add('item1');
-        }
+//        if(this.state.level === 1){
+//            let cursorArea = document.getElementById('root');
+//            cursorArea.classList.add('item1');
+//        }
+   
+//        let cursorArea = document.getElementById('root');
+//        cursorArea.classList.add(this.state.cursor);
+        
+        
+        
+            let gameContainerStyle = "game_Container ";
+            gameContainerStyle += this.state.cursor
         
         return (
+            
 
-            <Container stylee="game_Container" id="game_Container">
+            <Container stylee={gameContainerStyle} id="game_Container">
 
                     <GameTarget incrementCounter={this.incrementCounter}
                                 level={this.state.level}
@@ -140,13 +154,14 @@ class Game extends Component {
                         <GameStats counter={this.state.counter} />
                     </Container>
 
-                    <Container stylee="game_itemscontainer">
+                    <Container stylee="game_itemscontainer" >
 
                         <GameItem style="game_item" 
                                     item={this.item1} 
                                     counter={this.state.counter} 
                                     setGameState={this.setGameState} 
                                     decrementCounter={this.decrementCounter}
+                                    setCursor={this.setCursor}
                         />
 
                         <GameItem style="game_item" 
@@ -155,6 +170,7 @@ class Game extends Component {
                                     setGameState={this.setGameState} 
                                     decrementCounter={this.decrementCounter} 
                                     incrementSpecialInterval3000={this.incrementSpecialInterval3000}
+                                    setCursor={this.setCursor}
 
                         />
 
@@ -163,6 +179,7 @@ class Game extends Component {
                                     counter={this.state.counter} 
                                     setGameState={this.setGameState} 
                                     decrementCounter={this.decrementCounter} 
+                                    setCursor={this.setCursor}
                         />
 
                         <GameItem style="game_item" 
@@ -170,13 +187,15 @@ class Game extends Component {
                                     counter={this.state.counter} 
                                     setGameState={this.setGameState} 
                                     decrementCounter={this.decrementCounter} 
+                                    setCursor={this.setCursor}
                         />
             
                         <GameItem style="game_item" 
                                     item={this.item5} 
                                     counter={this.state.counter} 
                                     setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter} 
+                                    decrementCounter={this.decrementCounter}
+                                    setCursor={this.setCursor}
                         />
 
                     </Container>
