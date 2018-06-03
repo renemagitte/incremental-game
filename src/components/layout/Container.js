@@ -3,7 +3,7 @@ import './../../App.css';
 
 function Container(props) {
     return (
-      <div className={ props.stylee } >
+      <div className={ props.className } >
         { props.children }
       </div>
         

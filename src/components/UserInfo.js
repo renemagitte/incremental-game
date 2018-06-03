@@ -3,11 +3,16 @@ import './../App.css';
 import Paragraph from './layout/Paragraph';
 
 function UserInfo(props) {
+    
+    let greeting = `Ok, so your name is ${props.username} who cares.`
+    if(props.matrix){
+        greeting = "Ok, so your name is Nemo."
+    }
     return (
         
-        <Paragraph username={props.username}>
-            Ok, so your name is {props.username}.
-        </Paragraph>
+        <div className="game_userinfo">
+        { greeting }
+        </div>
         
     );
 }

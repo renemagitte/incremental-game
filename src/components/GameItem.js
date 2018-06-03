@@ -4,9 +4,6 @@ import './../App.css';
 import Container from './layout/Container';
 import Paragraph from './layout/Paragraph';
 
-import item1 from './../img/item1.png';
-import item2 from './../img/item2.png';
-import item3 from './../img/item3.png';
 
 
 
@@ -20,7 +17,8 @@ class GameItem extends Component {
         priceIncrease: 0,
         purchasedAmount: 0,
         image: '',
-        cursor: ''
+        cursor: '',
+        nextMessage: ''
     }
 
     componentDidMount(){
@@ -28,11 +26,13 @@ class GameItem extends Component {
             name: this.props.item.name,
             level: this.props.item.level,
             increments: this.props.item.increments,
+            special: this.props.item.special,
             price: this.props.item.price,
             priceIncrease: this.props.item.priceIncrease,
             purchasedAmount: this.props.item.purchasedAmount,
             image: this.props.item.image,
-            cursor: this.props.item.cursor
+            cursor: this.props.item.cursor,
+            nextMessage: this.props.item.nextMessage
         })
     }
 
@@ -42,13 +42,11 @@ class GameItem extends Component {
         this.decrementCounter();
         this.updateGameStates();
         this.checkForIncrementSpecials();
-//        this.setCursor(this.state.cursor);
         this.props.setCursor(this.state.cursor);
+        this.props.setMessage(this.state.nextMessage);
+        this.props.setButtonText();
     }
     
-//    setCursor = (cursor) => {
-//        this.props.setCursor(cursor);
-//    }
     
     updateGameStates = () => {
         this.setState(
@@ -69,7 +67,10 @@ class GameItem extends Component {
     checkForIncrementSpecials = () => { 
         if(this.props.incrementSpecialInterval3000){
             this.props.incrementSpecialInterval3000();
-        }   
+        }
+        if(this.state.name === 'Javascript'){
+            this.props.setMatrix();
+        }
     }
     
     handleCursor = (event) => {
@@ -98,8 +99,8 @@ class GameItem extends Component {
 //        }
         
         let gameItemStyle = "game_item game_item_inactive";
-        if((this.state.level == 1) || (this.state.purchasedAmount >= 1) || 
-           ((this.state.purchasedAmount == 0) && (this.props.counter+(this.state.price*0.25)) > this.state.price)){
+        if((this.state.level === 1) || (this.state.purchasedAmount >= 1) || 
+           ((this.state.purchasedAmount === 0) && (this.props.counter+(this.state.price*0.25)) > this.state.price)){
             gameItemStyle = "game_item";
         }
        
@@ -107,11 +108,12 @@ class GameItem extends Component {
       
         return (
 
-            <Container stylee={gameItemStyle}>
-                <Container stylee="game_item_image">
-                        <img src={ this.state.image } />
+            <Container className={gameItemStyle}>
+                <Container className="game_item_image">
+                        <img src={ this.state.image } alt={this.state.name} />
                 </Container>
                 <Paragraph>Item: {this.state.name}</Paragraph>
+                <Paragraph>Power: { this.state.increments } { this.state.special }</Paragraph>   
                 <Paragraph>Price: {this.state.price} hits</Paragraph>
                 <Paragraph>You have: {this.state.purchasedAmount}</Paragraph>
                 <Paragraph>{ buyButton }</Paragraph>

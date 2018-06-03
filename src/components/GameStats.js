@@ -4,7 +4,7 @@ import './../App.css';
 function GameStats(props) {
     return (
         
-        <p>You have clicked {props.counter} times.</p>
+        <p>You have {props.counter} hits.</p>
         
     );
 }

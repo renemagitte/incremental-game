@@ -1,23 +1,34 @@
 import React, { Component } from 'react';
 import './../App.css';
-import Paragraph from './layout/Paragraph';
 import song1 from './../sound/OliXL_PowerOverDeath.mp3';
 import song2 from './../sound/SFVAcid_Mocha.mp3';
-
+import song3 from './../sound/LRuschaV_WooAreYouWooDub.mp3';
 
 
 
 class Sountrack extends Component {
+//    
+//                <audio src={song1} controls> 
+//                       </audio>
     
     render() {
+        
+        Math.floor((Math.random() * 10) + 1);
+       
+        let song = song1;
+        
+        if(this.props.matrix){
+            song = song3;
+        }
+        
         return (
 
-            <div>
-            <audio src={song2} controls>
-                <p>If you are reading this, it is because your browser does not support the audio element.</p>
-            </audio>
+            <div className="game_soundtrack">
             
-                Ok, so this is level {this.props.level}.
+        { /* <embed src={song} width="80" height="80" loop="false" autostart="false" hidden="true" /> */ }
+
+           
+
             </div>
 
         );

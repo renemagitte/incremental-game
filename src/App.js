@@ -5,33 +5,46 @@ import Container from './components/layout/Container';
 
 import FirstPage from './components/FirstPage';
 import Game from './components/Game';
+import Matrix from './components/Matrix';
+import Win from './components/Win';
 
 class App extends Component {
     
     state = {
-        username: ''
+        username: '',
+        matrix: '',
+        win: false
     }
 
     handleUsername = (username) => {
         this.setState({ username: username });
     }
+    
+    setMatrix = () => {
+        this.setState({ matrix: true });
+    }
+    
+    setWin = () => {
+        this.setState({ win: true });
+    }
  
     render() {
       
         let view;
-
-        if(this.state.username){
-            view = <Game username={this.state.username}/>
+        
+        if(!this.state.win && this.state.username){
+            view = <Game username={this.state.username} setMatrix={this.setMatrix} matrix={this.state.matrix} setWin={this.setWin}  />
+        }else if(this.state.win){
+            view = <Win />
         }else{
             view = <FirstPage handleUsername={this.handleUsername} />;  
         }
         
  
-      
          
     return (
         
-        <Container style="rootJSX">
+        <Container className="rootJSX">
         
             { view  }
 

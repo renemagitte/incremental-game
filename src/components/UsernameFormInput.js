@@ -1,7 +1,7 @@
 import React from 'react';
 import './../App.css';
 
-function UsernameForm_label(props) {
+function UsernameFormInput(props) {
     return (
         
           <input 
@@ -18,4 +18,4 @@ function UsernameForm_label(props) {
     );
 }
 
-export default UsernameForm_label;
+export default UsernameFormInput;

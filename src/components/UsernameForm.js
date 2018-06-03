@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import Container from './layout/Container';
-import UsernameForm_label from './UsernameForm_label';
-import UsernameForm_input from './UsernameForm_input';
-import UsernameForm_submit from './UsernameForm_submit';
+import UsernameFormLabel from './UsernameFormLabel';
+import UsernameFormInput from './UsernameFormInput';
+import UsernameFormSubmit from './UsernameFormSubmit';
 
 class UsernameForm extends Component {
     
@@ -33,14 +33,14 @@ class UsernameForm extends Component {
   render() {
 
     return (
-        <Container>
+        <Container className="usernameform">
             <form onSubmit={this.handleUsername}>
         
-                <UsernameForm_label />
+                <UsernameFormLabel />
                 
-                <UsernameForm_input onChange={this.handleChange} username={this.state.username}/> 
+                <UsernameFormInput onChange={this.handleChange} username={this.state.username}/> 
         
-                <UsernameForm_submit />
+                <UsernameFormSubmit />
         
             </form>
         </Container>

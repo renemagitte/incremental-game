@@ -4,19 +4,13 @@ import './../App.css';
 import Container from './layout/Container';
 import target from './../img/target.png';
 import targetVariation from './../img/targetVariation.png';
+import GameMessage from './GameMessage';
 
 
 class GameTarget extends Component {
     
     state = {
         message: ''
-    }
-    
-    messages = {
-        level1: "Message 1: bla bla bla bla bla bla bla bla",
-        level3: "Message 3: bla bla bla bla bla bla bla bla",
-        level4: "Message 4: bla bla bla bla bla bla bla bla",
-        level5: "Message 5: bla bla bla bla bla bla bla bla"
     }
 
     animateTarget = (event) => {
@@ -40,7 +34,7 @@ class GameTarget extends Component {
          }, 400); 
     }
     
-    animateCursor = () => {
+    animateCursor = (event) => {
         
         let cursorArea = document.getElementById('root');
         cursorArea.classList.add('shakyCursor');
@@ -74,64 +68,49 @@ class GameTarget extends Component {
         }, 600);
     }
     
-/*
-    typeWriter = (message) => {
-        
-        var i = 0;
-        var speed = 50;
-        let text = message;
-        
-          if (i < text.length) {
-              
-//            document.getElementById("game_target_message").innerHTML += text.charAt(i); 
-//            i++;
-              
-            this.setState({ message: text.charAt(i) })
-              
-            setTimeout(this.typeWriter, speed);
-          }
-    }
-*/
     
-//    setTimeout(function(){ 
-//        
-//        alert("Hello"); 
-//    }, 50);
-    
+
 
   render() {
       
-    let message = '';
-              
-    if(this.props.level === 1){
-//      message = this.typeWriter(this.messages.level1);  
-    message = this.messages.level1;
-    }
-    if(this.props.level === 2){
-      message = this.messages.level1;
-    }
-    if(this.props.level === 3){
-      message = this.messages.level3;
-    }
-    if(this.props.level === 4){
-      message = this.messages.level4;
-    }
+//    let message = '';
+//              
+//    if(this.props.level === 1){
+//        message = this.messages.level1;
+//    }
+//    if(this.props.level === 2){
+//      message = this.messages.level1;
+//    }
+//    if(this.props.level === 3){
+//      message = this.messages.level3;
+//    }
+//    if(this.props.level === 4){
+//      message = this.messages.level4;
+//    }
+      
       
     return (
+            <React.Fragment>    
+        { /* <div className="game_target"> 
         
-            <div className="game_target">
-        
+            
+
                 <div className="game_target_message" id="game_target_message">
                     <p>Croesus says:</p>
 
-                    { this.state.message }
+                    { message }
+        
+                </div>
+        */ }
+
+
+                <div className="game_target_img" id="target" onClick={(event) => {  this.props.incrementCounter(); this.animateTarget(); this.animateCursor(); this.targetVariation(); /* this.props.setCursorHideShow('animate'); */ }}>
+                    <img src={target} alt="This is the target! Click here to gain points!" />
                 </div>
 
-                <div className="game_target_img" id="target" onClick={(event) => {  this.props.incrementCounter(); this.animateTarget(); this.animateCursor(); this.targetVariation(); }}>
-                    <img src={target} />
-                </div>
+      { /*  </div> */ }
 
-        </div>
+</React.Fragment>
     );
   }
 }
