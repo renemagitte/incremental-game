@@ -15,46 +15,20 @@ class Matrix extends Component {
 
     handleChange = (event) => {
         this.setState({ [event.target.name] : event.target.value })
-        
-        
-//        this.setState({
-//            [event.target.name] : event.target.value
-//        }, () => {
-//        this.afterSetStateFinished();
-//        });
-        
-        
-//        if(this.state.matrixInput1 === 'target' && this.state.matrixInput2 === 'innerHTML'){
-//            console.log("Win!!!!!!");
-//            this.props.setWin();
-//    //        this.setState({ matrixInput1: '' })
-//    //        this.setState({ matrixInput2: '' })
-//
-//        }
     }
     
     checkInput = () => {
         if(this.state.matrixInput1 === 'target' && this.state.matrixInput2 === 'innerHTML'){
-            console.log("Win!!!!!!");
             this.props.setWin();
-
-
-        }else{
+        }
+        else{
             this.setState({ matrixInput1: '' })
             this.setState({ matrixInput2: '' })
-            alert('Sorry. Try again');
+            console.log('Sorry. Try again');
         } 
     }
 
   render() { 
-      
-//    if(this.state.matrixInput1 === 'target' && this.state.matrixInput2 === 'innerHTML'){
-//        console.log("Win!!!!!!");
-//        this.props.setWin();
-////        this.setState({ matrixInput1: '' })
-////        this.setState({ matrixInput2: '' })
-//        
-//    }
       
     return (
         <div className="matrix">
@@ -72,7 +46,6 @@ class Matrix extends Component {
                         onClick={(event) => {  
                         this.props.incrementCounter(); this.animateTarget(); 
                         this.animateCursor(); this.targetVariation(); 
-                        /* this.props.setCursorHideShow('animate'); */ 
                         }}>
                         <img src={target} 
                         alt="This is the target! Click here to gain points!" />
@@ -82,8 +55,8 @@ class Matrix extends Component {
         
             <div className="matrix_execute">
                 Okay, this is your chance!<br/>
-                You can win this game by some basic knowledge in vanilla javscript.<br/>
-                Look at the code above and fill in what's missing in the input fields below:
+                You can WIN this game by some basic knowledge in vanilla javscript.<br/>
+                Look at the code above and fill in what's missing on the lines below:
         
                 <div className="matrix_execute_code">
         
@@ -91,27 +64,27 @@ class Matrix extends Component {
                     let enemyToRemove = document.getElementById('
                 <input 
                       type="matrixInput1"
-                      className="form-control"
+                      className="matrix_input"
                       name="matrixInput1"
                       id="matrixInput1"
                       aria-describedby="emailHelp"
                       placeholder="Enter something"
-                    onChange={this.handleChange}
+                        onChange={this.handleChange}
                       value={this.state.matrixInput1}
                 />
             ');<br/>
                     enemyToRemove.                
                     <input 
                       type="matrixInput2"
-                      className="form-control"
+                      className="matrix_input"
                       name="matrixInput2"
                       id="matrixInput2"
                       aria-describedby="emailHelp"
                       placeholder="Enter something"
-                    onChange={this.handleChange}
+                        onChange={this.handleChange}
                       value={this.state.matrixInput2}
                 /> = '';
-                    <p><button type="submit" className="button">Run code</button></p>
+                    <p><button type="submit" className="button">Done!</button></p>
                 </form>
                 </div>
             </div>

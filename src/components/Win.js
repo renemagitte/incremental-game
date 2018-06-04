@@ -10,7 +10,8 @@ class Win extends Component {
       
     return (
         <Container className="win">
-            You are the best!
+            Congratulations!<br />
+            You made it!
 
         </Container>
       );

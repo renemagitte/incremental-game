@@ -72,45 +72,13 @@ class GameTarget extends Component {
 
 
   render() {
-      
-//    let message = '';
-//              
-//    if(this.props.level === 1){
-//        message = this.messages.level1;
-//    }
-//    if(this.props.level === 2){
-//      message = this.messages.level1;
-//    }
-//    if(this.props.level === 3){
-//      message = this.messages.level3;
-//    }
-//    if(this.props.level === 4){
-//      message = this.messages.level4;
-//    }
-      
-      
+    
     return (
-            <React.Fragment>    
-        { /* <div className="game_target"> 
-        
-            
-
-                <div className="game_target_message" id="game_target_message">
-                    <p>Croesus says:</p>
-
-                    { message }
-        
-                </div>
-        */ }
-
-
-                <div className="game_target_img" id="target" onClick={(event) => {  this.props.incrementCounter(); this.animateTarget(); this.animateCursor(); this.targetVariation(); /* this.props.setCursorHideShow('animate'); */ }}>
-                    <img src={target} alt="This is the target! Click here to gain points!" />
-                </div>
-
-      { /*  </div> */ }
-
-</React.Fragment>
+        <React.Fragment>    
+            <div className="game_target_img" id="target" onClick={(event) => {  this.props.incrementCounter(); this.animateTarget(); this.animateCursor(); this.targetVariation(); }}>
+                <img src={target} alt="This is the target! Click here to gain points!" />
+            </div>
+        </React.Fragment>
     );
   }
 }

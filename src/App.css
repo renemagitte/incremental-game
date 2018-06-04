@@ -1,204 +1,5 @@
 
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
-
-.container{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.containerHalf{
-    width: 50%;
-    height: 100%; 
-    box-sizing: border-box;
-}
-
-.welcome{
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.welcome img{
-    width: 300px;
-}
-
-.welcomeCentered{
-   align-self: center; 
-}
-
-.welcomeTitle{
-    font-family: 'Yeon Sung', cursive;
-    font-size: 60px;
-}
-
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 8px;
-    border-radius: 4px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-.button:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
-
-.nameFieldWrapper{
-    width: 100%;
-    height: 100px;
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-.nameField{
-    width: 40%;
-    text-align: right;
-    padding: 20px;
-    font-family: 'Yeon Sung', cursive;
-}
-
-.voleContainer{
-    width: 100%;
-    height: 100vh;
-    background-image: url(img/firebg.jpg);
-    background-size:contain;
-    display: flex;
-    justify-content: space-around; 
-}
-
-
-.voleImg{
-    width: auto;
-    height: auto;
-    align-self: center;
-}
-
-.voleImg img{
-    width: 200px;
-}
-
-.weaponListWrapper{
-    width: 100%;
-    height: 400px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row; 
-}
-
-.weaponItem{
-    width: 160px;
-    height: 160px;
-    border: 2px solid gray;
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.weaponItemImg{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.weaponItemInactive{
-    filter: blur(4px);
-}
-
-.axeCursor{
-    cursor: url(img/axeCursor.png) 2 2, pointer !important;
-}
-
-.axeDeoCursor{
-    cursor: url(img/axeDeoCursor.png) 2 2, pointer !important;
-}
-
-.bowCursor{
-    cursor: url(img/bowCursor.png) 2 2, pointer !important;
-}
-
-
-.shakyCursor{
-    cursor: none !important;
-}
-
-/*
-.voleImg img:hover {
-    animation: shake 0.4s; 
-}
-*/
-
-.voleImgShake img:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
-    animation: shake 0.4s; 
-    /* When the animation is finished, start again */
-/*    animation-iteration-count: infinite; */
-}
-
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-2deg); }
-    20% { transform: translate(-3px, 0px) rotate(2deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(2deg); }
-    50% { transform: translate(-1px, 2px) rotate(-2deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-2deg); }
-    80% { transform: translate(-1px, -1px) rotate(2deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-2deg); }
-}
-
-
-
-/******************************************************************************************************************************/
-/*** NEW ***/
-
 html, body{
     margin: 0px auto;
 }
@@ -272,18 +73,13 @@ p{
     background-size: 100% auto;
     background-attachment: fixed;
     background-position: 0px 0px;
-/*        cursor: url(img/item1.png) 2 2, pointer;*/
 }
 
 .game_target{
     margin: 0px auto;
     width: 50%; 
-/*    height: 100vh;*/
-/*    background-size: contain;*/
     display: flex;
     flex-direction: column;
-/*    justify-content: flex-start;*/
-    
 }
 
     .game_target_message{
@@ -291,34 +87,16 @@ p{
         height: 500px;
         align-self: center; 
         color: gray;
-/*        padding-left: 30px;*/
-/*
-        border: 1px solid red;
-        box-sizing: border-box;
-*/
         padding-left: 50px;
         padding-right: 50px;
-        
         background-image: url(img/speechbubblefull.png);
         background-repeat: no-repeat;
         background-position: 25px 0px;
         background-size: 100% 100%; 
-        /*
-        padding-left: 100px;
-        padding-right: 10px;
-        padding-top: 40px;
-        padding-bottom: 30px;
-*/
-/*        margin: 40px;*/
         font-family: monospace;
-/*
-        padding-left: 40px;
-        padding-right: 40px;
-*/
         display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
-    
     }
 
     .game_target_message_empty{
@@ -326,37 +104,36 @@ p{
         height: 500px;
     }
         
-.game_target_message_heading{
-    width: 100%;
-    height: 30px;
-    align-self: center;
-    padding-left: 80px;
-    padding-top: 20px;
-    padding-bottom: 0px;
-    font-family: 'Yeon Sung', cursive;
-}
-.game_target_message_text{
-    width: 100%;
-    height: auto;
-    align-self: center;
-    padding-left: 70px;
-    padding-right: 40px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
+    .game_target_message_heading{
+        width: 100%;
+        height: 30px;
+        align-self: center;
+        padding-left: 80px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        font-family: 'Yeon Sung', cursive;
+    }
+    .game_target_message_text{
+        width: 100%;
+        height: auto;
+        align-self: center;
+        padding-left: 70px;
+        padding-right: 40px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
 
-.game_target_message_button{
-    width: 100%;
-    align-self: center;
-    padding-left: 120px;
-    padding-top: 10px;
-}
+    .game_target_message_button{
+        width: 100%;
+        align-self: center;
+        padding-left: 400px;
+        padding-top: 10px;
+    }
     .game_target_message p{
         font-weight: 600;
         padding: 10px;
         padding-left: 40px;
         padding-right: 40px;
-/*        margin: 0px auto;*/
         line-height: 1.2;
     }
 
@@ -364,16 +141,12 @@ p{
         width: 250px;
         height: 200px;
         height: auto;
-/*        height: auto;*/
         align-content: center;
-/*        border: 1px solid purple;*/
         align-self: center;
         
     }
     .game_target_img img{
-        width: 250px;
-/*        padding-top: 200px;*/
-        
+        width: 250px;  
     }
 
     .game_target_imgVariation{
@@ -432,16 +205,6 @@ p{
         }
 */
 
-        .animatedCursor{
-            cursor: none !important;
-        }
-
-.shakyCursor{
-    cursor: none !important;
-}
-
-
-
 .game_panel{
     margin: 0px auto;
     width: 50%; 
@@ -451,25 +214,21 @@ p{
     flex-direction: row;
 }
 
-.game_soundtrack{
-         width: 20%;  
-        height: 50px;  
-/*
-    border: 1px solid red;
-    box-sizing: border-box;
-*/
-}
+    .game_soundtrack{
+        width: 40%;  
+        height: 50px;
+        text-align: right;
+    }
 
 
     .game_userinfo{
-        width: 80%;  
+        width: 60%;  
         height: 50px;
         text-align: right;
         padding: 10px;
         padding-right: 20px;
         font-family: 'Yeon Sung', cursive;
         color: lightgray;
-/*        border: 1px solid purple;*/
         box-sizing: border-box;
         margin: 0px auto;
         
@@ -486,10 +245,6 @@ p{
         font-size: 24px;
         font-family: 'Yeon Sung', cursive;
         color: lightgray;
-/*
-        border: 1px solid purple;
-        box-sizing: border-box;
-*/
     }
 
     .game_itemscontainer{
@@ -499,22 +254,12 @@ p{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-/*
-        border: 1px solid purple;
-        box-sizing: border-box;
-*/
-/*        justify-content: space-around;*/
     }
 
         .game_item{
             width: 160px;  
             height: 210px;
-/*
-            border: 1px solid red;
-            box-sizing: border-box;
-*/
             font-family: 'Yeon Sung', cursive;
-/*            font-family: 'Roboto Condensed', sans-serif;*/
         }
 
         .game_item_image{
@@ -531,63 +276,57 @@ p{
 .matrix{
     width: 100%;
     height: 100%;
-    border: 1px solid purple;
     background-color: black;
 }
 
-.matrix_heading{
-    padding: 20px;
-    background-color: black;
-    font-family: 'Yeon Sung', cursive;
-    font-size: 30px;
-    color: green;
-    text-shadow: 2px 2px 4px #000000; 
-    text-align: center;
-    width: 100%;
-}
+    .matrix_heading{
+        padding: 20px;
+        background-color: black;
+        font-family: 'Yeon Sung', cursive;
+        font-size: 30px;
+        color: green;
+        text-shadow: 2px 2px 4px #000000; 
+        text-align: center;
+        width: 100%;
+    }
 
-.matrix_code{
-    width: 100%;
-    background-color: black; 
-    font-family: monospace;
-    color: green;
-    margin: 0px auto;
-    padding: 10px;
-}  
+    .matrix_code{
+        width: 100%;
+        background-color: black; 
+        font-family: monospace;
+        color: green;
+        margin: 0px auto;
+        text-align: left;
+    }  
 
-/*
-pre{
-    margin: 0px auto;
-    padding: 0px;
-} 
-*/
+    .matrix_execute{
+        width: 80%;
+        height: 100%;
+        margin: 0px auto;
+        color: gray;
+        font-family: 'Yeon Sung', cursive;
+        background-color: black;
+        padding-left: 40px;
+    } 
 
-.matrix_execute{
-    width: 80%;
-    height: 100%;
-    margin: 0px auto;
-/*    border: 1px solid green;*/
-    color: gray;
-    font-family: 'Yeon Sung', cursive;
-/*    font-family: monospace;*/
-    background-color: black;
-    padding-left: 40px;
-} 
+    .matrix_execute_code{
+        width: 100%;
+        background-color: black; 
+        font-family: monospace;
+        color: gray;
+        padding-top: 30px;
+    } 
 
-.matrix_execute_code{
-    width: 100%;
-    background-color: black; 
-    font-family: monospace;
-    color: gray;
-/*    margin: 0px auto;*/
-/*    padding-left: 40px;*/
-    padding-top: 30px;
-} 
+    .matrix_input{
+        background-color: black;
+        border: none;
+        border-bottom: 2px solid gray;
+        color: gray;
+    }
 
-.matrix_think{
+    .matrix_think{
         background-image: url(img/thinkbubble.png);
         background-repeat: no-repeat;
-/*        background-position: 0px 0px;*/
         background-size: 100% 100%; 
         position: absolute;
         z-index: 99;
@@ -595,20 +334,21 @@ pre{
         height: 100px;
         top: 10px;
         left: 580px;
-        padding-top: 70px;
-        padding-left: 80px;
-    font-family: monospace;
-    color: gray;
-}
+        padding-top: 50px;
+        padding-left: 65px;
+        font-family: monospace;
+        color: gray;
+    }
 
 .win{
     width: 100%;
     height: 100%;
     background-image: url(img/winbg.jpg);
-    font-family: 'Yeon Sung', cursive;
+    font-family: monospace;
     font-size: 40px;
     color: black;
     text-align: center;
+    padding-top: 100px;
 }
 
 .item1{
@@ -630,6 +370,7 @@ pre{
 .item5{
     cursor: url(img/item5.png) 2 2, pointer;
 }
+
 .item6{
     cursor: url(img/item6.png) 2 2, pointer;
 }
@@ -639,10 +380,9 @@ pre{
 }
 
 
-.hide{
-    cursor: none;
-}
 
-.show{
-    cursor: block;
+
+
+.shakyCursor{
+    cursor: none !important;
 }

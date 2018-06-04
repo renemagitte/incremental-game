@@ -15,7 +15,7 @@ class Sountrack extends Component {
         
         Math.floor((Math.random() * 10) + 1);
        
-        let song = song1;
+        let song = song3;
         
         if(this.props.matrix){
             song = song3;
@@ -24,11 +24,7 @@ class Sountrack extends Component {
         return (
 
             <div className="game_soundtrack">
-            
-        { /* <embed src={song} width="80" height="80" loop="false" autostart="false" hidden="true" /> */ }
-
-           
-
+                <embed src={song} width="0" height="0" loop="true" autostart="true" hidden="true" />
             </div>
 
         );
