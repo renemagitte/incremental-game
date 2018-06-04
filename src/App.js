@@ -5,7 +5,6 @@ import Container from './components/layout/Container';
 
 import FirstPage from './components/FirstPage';
 import Game from './components/Game';
-import Matrix from './components/Matrix';
 import Win from './components/Win';
 
 class App extends Component {

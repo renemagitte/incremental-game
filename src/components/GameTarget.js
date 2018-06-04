@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
 import './../App.css';
-
-import Container from './layout/Container';
 import target from './../img/target.png';
 import targetVariation from './../img/targetVariation.png';
-import GameMessage from './GameMessage';
-
 
 class GameTarget extends Component {
-    
-    state = {
-        message: ''
-    }
 
     animateTarget = (event) => {
         let animatedTarget = document.getElementById('target');
@@ -35,42 +27,42 @@ class GameTarget extends Component {
     }
     
     animateCursor = (event) => {
+//        let cursorArea = document.getElementById('item1');
+//        window.getComputedStyle('item1').opacity;
         
-        let cursorArea = document.getElementById('root');
-        cursorArea.classList.add('shakyCursor');
-        
-         setTimeout(function(event){ 
-             cursorArea.classList.remove('shakyCursor');
-         }, 80);
-         setTimeout(function(event){ 
-             cursorArea.classList.add('shakyCursor');
-         }, 160);
-         setTimeout(function(event){ 
-            cursorArea.classList.remove('shakyCursor');
-        }, 240);
-         setTimeout(function(event){ 
-            cursorArea.classList.add('shakyCursor');
-        }, 300);
-         setTimeout(function(event){ 
-             cursorArea.classList.remove('shakyCursor');
-         }, 360);
-         setTimeout(function(event){ 
-             cursorArea.classList.add('shakyCursor');
-         }, 420);
-         setTimeout(function(event){ 
-            cursorArea.classList.remove('shakyCursor');
-        }, 480);
-         setTimeout(function(event){ 
-             cursorArea.classList.add('shakyCursor');
-         }, 540);
-         setTimeout(function(event){ 
-            cursorArea.classList.remove('shakyCursor');
-        }, 600);
+//        let cursorArea = document.getElementById('game_Container');
+//        cursorArea.classList.add('shakyCursor');
+//        
+//         setTimeout(function(event){ 
+//             cursorArea.classList.remove('shakyCursor');
+//         }, 80);
+//         setTimeout(function(event){ 
+//             cursorArea.classList.add('shakyCursor');
+//         }, 160);
+//         setTimeout(function(event){ 
+//            cursorArea.classList.remove('shakyCursor');
+//        }, 240);
+//         setTimeout(function(event){ 
+//            cursorArea.classList.add('shakyCursor');
+//        }, 300);
+//         setTimeout(function(event){ 
+//             cursorArea.classList.remove('shakyCursor');
+//         }, 360);
+//         setTimeout(function(event){ 
+//             cursorArea.classList.add('shakyCursor');
+//         }, 420);
+//         setTimeout(function(event){ 
+//            cursorArea.classList.remove('shakyCursor');
+//        }, 480);
+//         setTimeout(function(event){ 
+//             cursorArea.classList.add('shakyCursor');
+//         }, 540);
+//         setTimeout(function(event){ 
+//            cursorArea.classList.remove('shakyCursor');
+//        }, 600);
     }
     
     
-
-
   render() {
     
     return (

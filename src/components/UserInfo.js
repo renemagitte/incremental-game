@@ -1,6 +1,5 @@
 import React from 'react';
 import './../App.css';
-import Paragraph from './layout/Paragraph';
 
 function UserInfo(props) {
     
@@ -9,8 +8,8 @@ function UserInfo(props) {
         /* This is almost certainly the name of that Keanu Reeves character? */
         greeting = "Ok, so your name is Nemo."
     }
-    return (
-        
+    
+    return (     
         <div className="game_userinfo">
         { greeting }
         </div>

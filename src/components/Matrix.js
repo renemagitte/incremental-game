@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
+import './../App.css';
 
-import Container from './layout/Container';
-import UsernameForm from './UsernameForm';
-import firstPageImg from './../img/firstPageImg.png';
-import target from './../img/target.png';
 
 class Matrix extends Component {
     
     state = {
         matrixInput1: '',
-        matrixInput2: ''
-            
+        matrixInput2: ''     
     }
 
     handleChange = (event) => {
@@ -33,7 +29,7 @@ class Matrix extends Component {
     return (
         <div className="matrix">
         
-            <div className="matrix_think">Okay, WTF just happened to me???<br/> Why am I unpleasantly and suddenly code?</div>
+            <div className="matrix_think">Okay, WTF just happened to me???<br/>Is this an existential crisis?</div>
         
             <div className="matrix_heading">
                 Omg! You have totally entered the Matrix!<br/>

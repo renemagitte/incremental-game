@@ -4,7 +4,9 @@ import './../App.css';
 function GameStats(props) {
     return (
         
-        <p>You have {props.counter} hits.</p>
+        <div className="game_stats">
+            <p>You have {props.counter} hits.</p>
+        </div>
         
     );
 }

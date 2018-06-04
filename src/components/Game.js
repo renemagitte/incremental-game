@@ -22,29 +22,21 @@ import item8 from './../img/item8.png';
 class Game extends Component {
     
     state = {
-        /* Game state */
+        /* Default state */
         counter: 0,
-        level: 1, /* decides whether items shall be displayed or not */
-        
-        /* Current item */
+        level: 1,
         increments: 1,
         cursor: 'item1',
-        message: 'Okk... eh, what are YOU doin\' here? I really don\'t understand, man. You could have made an appearance on any single place on earth and you still showed up here? I can\'t believe it, you\'re really just too much! What have you got there anyways? Is that an axe? What do you take me for? A f***ing chopping block? You woodenhead!',
+        message: 'Okk... eh, what are YOU doin\' here? I really don\'t understand, man. You could have made an appearance on any single place on earth and you still showed up here? I can\'t believe it, you\'re really just too much! What have you got there anyways? Is that an axe? What do you take me for? A chopping block? You woodenhead!',
         buttonText: 'Answer: - Umm... okay...'
     }
 
-    /**** Functions ***/
     setGameState = (increments, level) => {
-        this.setState({ 
-            increments: increments
-        })
+        this.setState({ increments: increments })
         
         if(this.state.level < level){
-            this.setState({ 
-                level: level,
-            })
+            this.setState({ level: level })
         }
-
     }
     
     incrementCounter = () => {
@@ -77,7 +69,7 @@ class Game extends Component {
                 this.setState({ buttonText: "Answer: - idk" });
                 break;
             case 2:
-                this.setState({ buttonText: "Answer: - Umm okay..." });
+                this.setState({ buttonText: "Answer: - Well..." });
                 break;
             case 3:
                 this.setState({ buttonText: "Answer: - Oh shut up Croesus!" });
@@ -85,8 +77,8 @@ class Game extends Component {
             case 4:
                 this.setState({ buttonText: "Answer: - This is 100% stupid" });
                 break;
-            case 5:
-                this.setState({ buttonText: "Answer: - This is 100% stupid" });
+            default:
+                this.setState({ buttonText: "Answer: - Umm okay..." });
                 break;
         }
     }
@@ -99,14 +91,14 @@ class Game extends Component {
     item1 = {
         name: 'Axe',
         level: 1,
-        increments: 100,
+        increments: 1,
         special: '',
         price: 10,
         priceIncrease: 2,
         purchasedAmount: 1,
         image: item1,
         cursor: 'item1',
-        nextMessage: "Okk... eh, what are YOU doin' here? I really don't understand, man. You could have made an appearance on any single place on earth and you still showed up here? I can't believe it, you're really just too much! What have you got there anyways? Is that an axe? What do you take me for? A f***ing chopping block? You woodenhead!"
+        nextMessage: "Okk... eh, what are YOU doin' here? I really don't understand, man. You could have made an appearance on any single place on earth and you still showed up here? I can't believe it, you're really just too much! What have you got there anyways? Is that an axe? What do you take me for? A chopping block? You woodenhead!"
     }
 
     item2 = {
@@ -158,7 +150,7 @@ class Game extends Component {
         purchasedAmount: 0,
         image: item5,
         cursor: 'item5',
-        nextMessage: "Two men walked into a bar... oh what's the use... plus, I pressume we've allready got a joke here: your life! He he hehehehhihiihahahaahoho."
+        nextMessage: "Two men walked into a bar... oh what's the use... plus, I pressume we've allready got a joke: your life! He he he hehehhihiihahahaahoho."
     }
 
     item6 = {
@@ -184,7 +176,7 @@ class Game extends Component {
         purchasedAmount: 0,
         image: item7,
         cursor: 'item7',
-        nextMessage: "I acctually getting a bit tired now. You are really persistent you know."
+        nextMessage: "You shouldn't be bombing people/cartoon animals you know. It's just not nice. Why are you so mean to me anyways? Please stop that."
     }
 
     item8 = {
@@ -228,9 +220,7 @@ class Game extends Component {
             <Container className={gameContainerStyle} id="game_Container">
                     
                 <Container className="game_target">
-
                         { targetView }
-
                 </Container>
             
                 <Container className="game_panel">
@@ -239,96 +229,94 @@ class Game extends Component {
 
                         <UserInfo username={this.props.username} matrix={this.props.matrix} />
             
-                    <Container className="game_stats">
                         <GameStats counter={this.state.counter} />
-                    </Container>
 
-                    <Container className="game_itemscontainer" >
+                        <Container className="game_itemscontainer" >
 
-                        <GameItem   item={this.item1}
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter}
-                                    setCursor={this.setCursor}
-                                    setMessage={this.setMessage}
-                                    setButtonText={this.setButtonText}
-    
-                        />
+                            <GameItem   item={this.item1}
+                                        counter={this.state.counter} 
+                                        setGameState={this.setGameState} 
+                                        decrementCounter={this.decrementCounter}
+                                        setCursor={this.setCursor}
+                                        setMessage={this.setMessage}
+                                        setButtonText={this.setButtonText}
 
-                        <GameItem   item={this.item2} 
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter} 
-                                    incrementSpecialInterval3000={this.incrementSpecialInterval3000}
-                                    setCursor={this.setCursor}
-                                    setMessage={this.setMessage}
-                                    setButtonText={this.setButtonText}
-                        />
+                            />
 
-                        <GameItem   item={this.item3} 
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter} 
-                                    setCursor={this.setCursor}
-                                    setMessage={this.setMessage}
-                                    setButtonText={this.setButtonText}
-                        />
+                            <GameItem   item={this.item2} 
+                                        counter={this.state.counter} 
+                                        setGameState={this.setGameState} 
+                                        decrementCounter={this.decrementCounter} 
+                                        incrementSpecialInterval3000={this.incrementSpecialInterval3000}
+                                        setCursor={this.setCursor}
+                                        setMessage={this.setMessage}
+                                        setButtonText={this.setButtonText}
+                            />
 
-                        <GameItem   item={this.item4} 
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter} 
-                                    setCursor={this.setCursor}
-                                    setMessage={this.setMessage}
-                                    setButtonText={this.setButtonText}
-                        />
+                            <GameItem   item={this.item3} 
+                                        counter={this.state.counter} 
+                                        setGameState={this.setGameState} 
+                                        decrementCounter={this.decrementCounter} 
+                                        setCursor={this.setCursor}
+                                        setMessage={this.setMessage}
+                                        setButtonText={this.setButtonText}
+                            />
+
+                            <GameItem   item={this.item4} 
+                                        counter={this.state.counter} 
+                                        setGameState={this.setGameState} 
+                                        decrementCounter={this.decrementCounter} 
+                                        setCursor={this.setCursor}
+                                        setMessage={this.setMessage}
+                                        setButtonText={this.setButtonText}
+                            />
             
-                        <GameItem   item={this.item5}
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter}
-                                    setCursor={this.setCursor}
-                                    setMessage={this.setMessage}
-                                    setButtonText={this.setButtonText}
-                    />
-            
-                        <GameItem   item={this.item6}
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter}
-                                    setCursor={this.setCursor}
-                                    setMessage={this.setMessage}
-                                    setButtonText={this.setButtonText}
-                        />
-            
-                        <GameItem   item={this.item7}
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter}
-                                    setCursor={this.setCursor}
-                                    setMessage={this.setMessage}
-                                    setButtonText={this.setButtonText}
-                        />
-            
-                        <GameItem   item={this.item8} 
-                                    counter={this.state.counter} 
-                                    setGameState={this.setGameState} 
-                                    decrementCounter={this.decrementCounter}
-                                    setCursor={this.setCursor}
-                                    setMessage={this.setMessage}
-                                    setButtonText={this.setButtonText}
-                                    setMatrix={this.props.setMatrix}
-                        />
+                            <GameItem   item={this.item5}
+                                        counter={this.state.counter} 
+                                        setGameState={this.setGameState} 
+                                        decrementCounter={this.decrementCounter}
+                                        setCursor={this.setCursor}
+                                        setMessage={this.setMessage}
+                                        setButtonText={this.setButtonText}
+                            />
 
-                    </Container>
+                            <GameItem   item={this.item6}
+                                        counter={this.state.counter} 
+                                        setGameState={this.setGameState} 
+                                        decrementCounter={this.decrementCounter}
+                                        setCursor={this.setCursor}
+                                        setMessage={this.setMessage}
+                                        setButtonText={this.setButtonText}
+                            />
+            
+                            <GameItem   item={this.item7}
+                                        counter={this.state.counter} 
+                                        setGameState={this.setGameState} 
+                                        decrementCounter={this.decrementCounter}
+                                        setCursor={this.setCursor}
+                                        setMessage={this.setMessage}
+                                        setButtonText={this.setButtonText}
+                            />
+            
+                            <GameItem   item={this.item8} 
+                                        counter={this.state.counter} 
+                                        setGameState={this.setGameState} 
+                                        decrementCounter={this.decrementCounter}
+                                        setCursor={this.setCursor}
+                                        setMessage={this.setMessage}
+                                        setButtonText={this.setButtonText}
+                                        setMatrix={this.props.setMatrix}
+                            />
 
-            </Container>
+                        </Container>
+
+                </Container>
 
         </Container>
 
 
         );
-  }
+    }
 }
 
 export default Game;

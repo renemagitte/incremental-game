@@ -56,6 +56,25 @@ html, body{
 .item7{
     cursor: url(img/item7.png) 2 2, pointer;
 }
+.item8{
+    cursor: url(img/item8.png) 2 2, pointer;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-2deg); }
+    20% { transform: translate(-3px, 0px) rotate(2deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(2deg); }
+    50% { transform: translate(-1px, 2px) rotate(-2deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-2deg); }
+    80% { transform: translate(-1px, -1px) rotate(2deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-2deg); }
+}
+
+/*********** MOBILE **************/
 
 @media screen and (max-width: 799px) {
     
@@ -138,7 +157,8 @@ p{
         height: auto;   
     }
     .game_target_img img{
-        width: 220px;  
+        width: 220px; 
+        padding-left: 100px;
     }
     
     
@@ -201,7 +221,6 @@ p{
             font-family: 'Yeon Sung', cursive;
             color: lightgray;
             font-size: 12px;
-/*            padding-left: 10px;*/
         }
 
         .game_item_image{
@@ -214,11 +233,76 @@ p{
             filter: blur(4px);
         }
     
+.matrix{
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
 
+    .matrix_heading{
+        padding: 20px;
+        background-color: black;
+        font-family: 'Yeon Sung', cursive;
+        font-size: 16px;
+        color: green;
+        text-shadow: 2px 2px 4px #000000; 
+        text-align: center;
+        width: 100%;
+    }
 
+    .matrix_code{
+        width: 100%;
+        background-color: black; 
+        font-family: monospace;
+        color: green;
+        margin: 0px auto;
+        text-align: left;
+    }  
 
+    .matrix_execute{
+        width: 80%;
+        margin: 0px auto;
+        color: gray;
+        font-family: 'Yeon Sung', cursive;
+        background-color: black;
+        padding-left: 30px;
+        padding-right: 80px;
+    } 
 
+    .matrix_execute_code{
+        width: 100%;
+        background-color: black; 
+        font-family: monospace;
+        color: gray;
+        padding-top: 30px;
+        font-size: 12px;
+    } 
+
+    .matrix_input{
+        background-color: black;
+        border: none;
+        border-bottom: 2px solid gray;
+        color: gray;
+        width: 100px;
+    }
+
+    .matrix_think{
+        background-image: url(img/thinkbubble.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%; 
+        position: absolute;
+        z-index: 99;
+        width: 300px;
+        height: 100px;
+        top: 10px;
+        left: 580px;
+        padding-top: 50px;
+        padding-left: 65px;
+        font-family: monospace;
+        color: gray;
+    }
+    
+}
 
 /*********** DESKTOP **************/
 
@@ -349,34 +433,12 @@ p{
         padding-top: 200px;
     }
 
-
-
-        .game_target_animate img:hover {
-            /* Start the shake animation and make the animation last for 0.5 seconds */
-            animation: shake 0.4s; 
-            /* When the animation is finished, start again */
-        /*    animation-iteration-count: infinite; */
-/*            transform: translateX(100%) rotate(180deg);*/
-/*
-            width: 1200px;
-            margin-left: -1000px;
-*/
-        }
+    .game_target_animate img:hover {
+        animation: shake 0.4s; 
+    }
 
         
-        @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-2deg); }
-            20% { transform: translate(-3px, 0px) rotate(2deg); }
-            30% { transform: translate(3px, 2px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(2deg); }
-            50% { transform: translate(-1px, 2px) rotate(-2deg); }
-            60% { transform: translate(-3px, 1px) rotate(0deg); }
-            70% { transform: translate(3px, 1px) rotate(-2deg); }
-            80% { transform: translate(-1px, -1px) rotate(2deg); }
-            90% { transform: translate(1px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-2deg); }
-        }
+
         
 
 /*

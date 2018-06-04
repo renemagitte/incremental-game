@@ -6,10 +6,9 @@ function UsernameFormInput(props) {
         
           <input 
                   type="username"
-                  className="form-control"
                   name="username"
                   id="username"
-                  aria-describedby="emailHelp"
+                  aria-describedby="username"
                   placeholder="Enter username"
                   onChange={props.onChange}
                   value={props.username}

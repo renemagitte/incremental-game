@@ -38,7 +38,6 @@ class GameItem extends Component {
 
     handlePurchase = (event) => {
         event.preventDefault();
-//        this.handleCursor();
         this.decrementCounter();
         this.updateGameStates();
         this.checkForIncrementSpecials();
@@ -72,17 +71,7 @@ class GameItem extends Component {
             this.props.setMatrix();
         }
     }
-    
-    handleCursor = (event) => {
-        let cursorArea = document.getElementById('root');
-        let regexCursorClass = /item\d/;
-        cursorArea.classList.remove(regexCursorClass);
-        let cursor = this.state.cursor;
-        window.getComputedStyle(cursorArea).opacity;
-        cursorArea.classList.add(cursor);
-    }
-    
-    
+        
     render() {
       
         let buyButton = '';
@@ -91,12 +80,6 @@ class GameItem extends Component {
                              /* onClick={(event) => {  this.handlePurchase(); this.handleCursor(); }} */
           className="button">Buy</button>
         }
-        
-        
-//        let gameItemStyle = "game_item";
-//        if((this.state.level > 1 || this.state.purchasedAmount == 0) && ((this.props.counter+(this.state.price/3)) < this.state.price)){
-//            gameItemStyle = "game_item game_item_inactive"
-//        }
         
         let gameItemStyle = "game_item game_item_inactive";
         if((this.state.level === 1) || (this.state.purchasedAmount >= 1) || 

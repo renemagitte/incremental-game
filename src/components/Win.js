@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import './../App.css';
 import Container from './layout/Container';
-import UsernameForm from './UsernameForm';
-import firstPageImg from './../img/firstPageImg.png';
 
-class Win extends Component {
+function Win() {
 
-  render() {
-      
     return (
         <Container className="win">
             Congratulations!<br />
@@ -15,7 +11,7 @@ class Win extends Component {
 
         </Container>
       );
-    }
+
 }
 
 export default Win;

@@ -18,18 +18,10 @@ class UsernameForm extends Component {
     handleUsername = (event) => {
         event.preventDefault();
         if(this.state.username){
-      /**
-       * This function is passed down from <App /> and will be called inside of <App />
-       * this function will not be executed inside of LoginForm, it will be executed
-       * inside of <App />
-       */
             this.props.handleUsername(this.state.username);
         } 
-
     }
     
-
-
   render() {
 
     return (
@@ -44,9 +36,7 @@ class UsernameForm extends Component {
         
             </form>
         </Container>
-
-
-
+        
       );
     }
 }
