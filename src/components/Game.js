@@ -27,7 +27,7 @@ class Game extends Component {
         level: 1,
         increments: 1,
         cursor: 'item1',
-        message: 'Okk... eh, what are YOU doin\' here? I really don\'t understand, man. You could have made an appearance on any single place on earth and you still showed up here? I can\'t believe it, you\'re really just too much! What have you got there anyways? Is that an axe? What do you take me for? A chopping block? You woodenhead!',
+        message: 'Okk... eh, what are YOU doin\' here? I really don\'t understand, man. You could have made an appearance on any single place on earth and you still showed up here? I can\'t believe it, you\'re really just too much! What have you got there anyways? Is that an axe? What do you take me for? A chopping block?',
         buttonText: 'Answer: - Umm... okay...'
     }
 
@@ -98,7 +98,7 @@ class Game extends Component {
         purchasedAmount: 1,
         image: item1,
         cursor: 'item1',
-        nextMessage: "Okk... eh, what are YOU doin' here? I really don't understand, man. You could have made an appearance on any single place on earth and you still showed up here? I can't believe it, you're really just too much! What have you got there anyways? Is that an axe? What do you take me for? A chopping block? You woodenhead!"
+        nextMessage: "Okk... eh, what are YOU doin' here? I really don't understand, man. You could have made an appearance on any single place on earth and you still showed up here? I can't believe it, you're really just too much! What have you got there anyways? Is that an axe? What do you take me for? A chopping block?"
     }
 
     item2 = {
@@ -124,7 +124,7 @@ class Game extends Component {
         purchasedAmount: 0,
         image: item3,
         cursor: 'item3',
-        nextMessage: "I just called the Gucci headquarters and asked them deliver a gallon of their finest scent. You simply can't win over me. Hey, I just made up this rhyme for you: You've got a sword - it makes me feel bored."
+        nextMessage: "I just called the Gucci headquarters and asked them deliver a gallon of their finest scent. You simply can't win over me. Hey, I just made up this rhyme for you: 'You've got a sword - it makes me feel bored.' Now, should I become a rapper or a poet? Oh, I'll just have both!"
     }
 
     item4 = {
@@ -150,7 +150,7 @@ class Game extends Component {
         purchasedAmount: 0,
         image: item5,
         cursor: 'item5',
-        nextMessage: "Two men walked into a bar... oh what's the use... plus, I pressume we've allready got a joke: your life! He he he hehehhihiihahahaahoho."
+        nextMessage: "Two men walked into a bar... oh what's the use... plus, I pressume we've allready got enough of joke around: your life! He he he hehehhihiihahahaahoho."
     }
 
     item6 = {
@@ -176,7 +176,7 @@ class Game extends Component {
         purchasedAmount: 0,
         image: item7,
         cursor: 'item7',
-        nextMessage: "You shouldn't be bombing people/cartoon animals you know. It's just not nice. Why are you so mean to me anyways? Please stop that."
+        nextMessage: "What kind of game is this anyways? I thought I was supposed to be the villian, but I'm not really doing anything?"
     }
 
     item8 = {
@@ -188,8 +188,8 @@ class Game extends Component {
         priceIncrease: 500,
         purchasedAmount: 0,
         image: item8,
-        cursor: 'item8',
-        nextMessage: "WTF just happened to me???"
+//        cursor: '',
+//        nextMessage: ''
     }
 
     render() { 

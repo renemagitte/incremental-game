@@ -18,9 +18,9 @@ class Matrix extends Component {
             this.props.setWin();
         }
         else{
-            this.setState({ matrixInput1: '' })
-            this.setState({ matrixInput2: '' })
-            console.log('Sorry. Try again');
+            alert('Sorry. Try again');
+            /* There seem to be a bug here. Nothing is suppused to happen but instead you are 
+            redirected to the landingpage and I'm nout sure why */
         } 
     }
 
@@ -63,7 +63,6 @@ class Matrix extends Component {
                       className="matrix_input"
                       name="matrixInput1"
                       id="matrixInput1"
-                      aria-describedby="emailHelp"
                       placeholder="Enter something"
                         onChange={this.handleChange}
                       value={this.state.matrixInput1}
@@ -75,7 +74,6 @@ class Matrix extends Component {
                       className="matrix_input"
                       name="matrixInput2"
                       id="matrixInput2"
-                      aria-describedby="emailHelp"
                       placeholder="Enter something"
                         onChange={this.handleChange}
                       value={this.state.matrixInput2}
